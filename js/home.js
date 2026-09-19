@@ -5,14 +5,15 @@
     var FRAME_PATH = function (i) {
         return "assets/img/frames_mine/frame-" + (i + 1) + ".png";
     };
-    var HEIGHT_RATIO = 0.8; // matches the background-size: auto 80%
+    var HEIGHT_RATIO = 0.8; // matches the original background-size: auto 80%
     var stage = document.getElementById("scrollStage");
     var canvas = document.getElementById("docCanvas");
     var heroPin = document.getElementById("heroPin");
     var maleDoctor = document.getElementById("maleDoctor");
     var maleShowcase = document.querySelector(".doctor-showcase");
+    // The male doctor gets the same scroll travel as this copy, with a fixed
+    // starting offset that makes it meet the animated doctor at frame 15.
     var contentSections = stage ? stage.querySelectorAll("#heroPin > .content_div") : [];
-    
     if (!stage || !canvas) return;
 
     var portraitPhone = window.matchMedia("(max-width: 767px) and (orientation: portrait)");
@@ -33,6 +34,7 @@
         var femaleHeight = rect.height * HEIGHT_RATIO;
         var maleWidth = femaleHeight * (1024 / 1536);
         var femaleWidth = femaleHeight * (720 / 1280);
+        // Keep a clear gap before switching to the two-doctor composition.
         var hasRoom = window.innerWidth >= 768 && rect.width >= maleWidth + femaleWidth + 64;
         heroPin.classList.toggle("has-doctor-room", hasRoom);
         if (hasRoom) {
@@ -67,6 +69,7 @@
         var canvasRect = canvas.getBoundingClientRect();
         var targetHeight = canvasRect.height * HEIGHT_RATIO;
         var targetWidth = targetHeight * (1024 / 1536);
+        // Center the male doctor in the left half, with a small right bias.
         var targetLeft = canvasRect.left + canvasRect.width * 0.28 - targetWidth / 2;
         var targetTop = canvasRect.bottom - targetHeight;
         var offsetAtFrame15 = (MALE_REVEAL_FRAME / (FRAME_COUNT - 1)) * travel;
@@ -74,6 +77,8 @@
             ? Math.min(390, canvasRect.height * 0.55)
             : 0;
 
+        // Its y position is translated by the same -scroll offset as the
+        // other content. The static correction places it beside her on frame 15.
         var x = targetLeft - maleStartRect.left;
         var y = targetTop + offsetAtFrame15 - maleStartRect.top - contentOffset - servicesLift;
         maleShowcase.style.transform = "translate(" + x + "px, " + y + "px)";
@@ -87,6 +92,8 @@
         }
     }
 
+    // If the target frame hasn't finished loading yet, fall back to the
+    // nearest frame that has, so fast scrolling never shows a blank canvas.
     function nearestLoaded(index) {
         if (frames[index] && frames[index].complete && frames[index].naturalWidth) {
             return frames[index];
@@ -128,9 +135,10 @@
         var laptopShift = window.innerWidth >= 768 && window.innerWidth <= 1366
             ? Math.min(90 * dpr, cw * 0.07)
             : 0;
-        var x = cw - w - laptopShift;
-        var y = ch - h;
+        var x = cw - w - laptopShift;   // shift left on laptop layouts
+        var y = ch - h;   // anchor bottom
         ctx.drawImage(img, x, y, w, h);
+
     }
 
     function frameForScroll() {
@@ -164,6 +172,8 @@
         });
     }
 
+    // The body is locked so the stage can control the animation. Forward
+    // wheel input from the header and surrounding page into that stage.
     function forwardWheel(event) {
         if (stage.contains(event.target)) return;
         var maxScroll = stage.scrollHeight - stage.clientHeight;
@@ -191,64 +201,9 @@
     window.addEventListener("resize", resizeCanvas);
 
     preload();
+    // Draw the first frame as soon as it's ready, so the hero isn't blank
+    // while the rest of the sequence keeps loading in the background.
     frames[0].addEventListener("load", function () { resizeCanvas(); });
     maleDoctor.addEventListener("load", resizeCanvas);
     resizeCanvas();
 })();
-
-/* =======================================================
-   MODAL & FORM CONTROLLERS (Global Scope)
-   ======================================================= */
-function openModal(modalId, param) {
-    var modal = document.getElementById(modalId);
-    if (!modal) return;
-    
-    // Set specific parameters if provided
-    if (modalId === 'doctorModal' && param) {
-        var docField = document.getElementById('doctorSelectField');
-        if (docField) docField.value = param;
-    } else if (modalId === 'vaxModal' && param) {
-        var vaxSelect = document.getElementById('vaxTypeSelect');
-        if (vaxSelect) vaxSelect.value = param;
-    } else if (modalId === 'bloodModal' && param) {
-        var bloodAction = document.getElementById('bloodActionType');
-        if (bloodAction) bloodAction.value = param;
-    }
-    
-    modal.classList.add('is-active');
-}
-
-function closeModal(modalId) {
-    var modal = document.getElementById(modalId);
-    if (modal) modal.classList.remove('is-active');
-}
-
-// Close on backdrop click
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('modal-overlay')) {
-        e.target.classList.remove('is-active');
-    }
-});
-
-// Toast Notification
-function showToast(message) {
-    var toast = document.getElementById('toast');
-    var toastText = document.getElementById('toastText');
-    if (!toast || !toastText) return;
-    
-    toastText.textContent = message;
-    toast.style.display = 'flex';
-    
-    setTimeout(function () {
-        toast.style.display = 'none';
-    }, 4000);
-}
-
-function handleFormSubmit(event, successMsg) {
-    event.preventDefault();
-    var form = event.target;
-    var modal = form.closest('.modal-overlay');
-    if (modal) modal.classList.remove('is-active');
-    form.reset();
-    showToast(successMsg);
-}

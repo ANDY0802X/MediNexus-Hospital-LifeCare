@@ -4,9 +4,8 @@ html {
     padding: 0;
     min-height: 100%;
     background: #edf6f4;
-    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #183b43;
-    scroll-behavior: smooth;
 }
 
 *,
@@ -15,242 +14,77 @@ html {
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #174b57;
-    --primary-light: #24636a;
-    --primary-dark: #0f343d;
-    --accent-teal: #35d4e6;
-    --accent-red: #e63946;
-    --accent-green: #2a9d8f;
-    --accent-orange: #f4a261;
-    --bg-light: #edf6f4;
-    --card-bg: #ffffff;
-    --border-color: #d6e6e3;
-    --shadow-soft: 0 10px 28px rgba(24, 59, 67, 0.08);
-    --shadow-hover: 0 16px 36px rgba(24, 59, 67, 0.16);
-}
-
 .clay-card {
-    background: var(--card-bg);
+    background: #ffffff;
     border-radius: 14px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft);
+    border: 1px solid #d6e6e3;
+    box-shadow: 0 10px 28px rgba(24, 59, 67, 0.08);
     position: relative;
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.clay-card:hover {
-    box-shadow: var(--shadow-hover);
+.clay-card::before {
+    display: none;
+}
+
+.clay-card::after {
+    display: none;
 }
 
 .main {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     box-sizing: border-box;
     padding: 10px;
     background: transparent;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
 }
 
-/* Header & Navigation */
 .pannel {
     width: 100%;
-    height: clamp(58px, 12vw, 68px);
+    height: clamp(56px, 12vw, 65px);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     position: relative;
-    padding: 0 16px;
+    padding: 0 12px;
     border-radius: 14px;
     background: #174b57;
     border: 1px solid #286674;
     box-shadow: 0 8px 20px rgba(24, 59, 67, 0.14);
-    z-index: 100;
-}
-
-.brand-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #ffffff;
 }
 
 .logo {
-    width: clamp(38px, 6vw, 48px);
-    height: clamp(38px, 6vw, 48px);
+    width: clamp(36px, 14vw, 55px);
+    height: clamp(36px, 14vw, 55px);
     aspect-ratio: 1;
     flex: 0 0 auto;
     border-radius: 50%;
-    background: #d9edf4;
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
+    margin-left: clamp(6px, 2.5vw, 10px);
+    border: 0;
+    background: #f8c7ad;
+    border: 3px solid rgba(255, 255, 255, 0.72);
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bank_name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #ffffff;
-}
-
-.bank_name .brand-title {
-    font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+.bank_name{
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 60%;
     margin: 0;
-    color: #ffffff;
     display: flex;
     align-items: center;
-    gap: 6px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #ffffff;
 }
 
-.bank_name .brand-subtitle {
-    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
-    color: #a8d5db;
-    font-weight: 500;
+.bank_name > p{
     margin: 0;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-}
-
-/* Nav Dashboard */
-.dashbord {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #fff;
-    margin: 0;
-}
-
-.dashbord a {
-    text-decoration: none;
-    font-family: 'Segoe UI', sans-serif;
-    color: #eaf8f5;
-    font-size: clamp(0.85rem, 1.4vw, 0.95rem);
-    font-weight: 500;
-    padding: 6px 10px;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.dashbord a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-}
-
-.dashbord a.portal-btn {
-    background: #35d4e6;
-    color: #103841;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(53, 212, 230, 0.35);
-}
-
-.dashbord a.portal-btn:hover {
-    background: #5ef0ff;
-    transform: translateY(-1px);
-}
-
-/* Buttons */
-.btn-primary {
-    background: var(--primary);
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    text-decoration: none;
-}
-
-.btn-primary:hover {
-    background: var(--primary-light);
-    transform: translateY(-1px);
-}
-
-.btn-accent-red {
-    background: #e63946;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-}
-
-.btn-accent-red:hover {
-    background: #d62828;
-    transform: translateY(-1px);
-}
-
-.btn-accent-green {
-    background: #2a9d8f;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-}
-
-.btn-accent-green:hover {
-    background: #21867a;
-    transform: translateY(-1px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: var(--primary);
-    border: 1.5px solid var(--primary);
-    border-radius: 8px;
-    padding: 7px 14px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-}
-
-.btn-outline:hover {
-    background: var(--primary);
-    color: #ffffff;
+    padding: 0;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }

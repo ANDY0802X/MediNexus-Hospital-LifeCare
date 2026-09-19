@@ -1,4 +1,4 @@
-body, html {
+body,html {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -18,7 +18,7 @@ html::-webkit-scrollbar-thumb {
     border-radius: 8px;
 }
 
-.main {
+.main{
     display: block;
     justify-content: center;
     align-items: center;
@@ -26,13 +26,12 @@ html::-webkit-scrollbar-thumb {
 
 .container {
     width: 95%;
-    height: 82vh;
+    height: 80vh;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 15px;
-    background: #ffffff;
+    top: 20px;
 }
 
 .container blockquote {
@@ -40,12 +39,13 @@ html::-webkit-scrollbar-thumb {
     z-index: 2;
 }
 
-/* Tall track that supplies the scroll distance the animation plays over. */
+/* Tall track that supplies the scroll distance the animation plays over.
+   .container above sticks to the top of the viewport while this scrolls by. */
 .scroll-stage {
     position: relative;
     width: 95%;
-    height: calc(100vh - 90px);
-    margin: 15px auto 0;
+    height: calc(100vh - 95px);
+    margin: 20px auto 0;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-gutter: stable;
@@ -54,7 +54,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .scroll-stage::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
 }
 
 .scroll-stage::-webkit-scrollbar-track {
@@ -63,14 +63,14 @@ html::-webkit-scrollbar-thumb {
 
 .scroll-stage::-webkit-scrollbar-thumb {
     background: #174b57;
-    border: 2px solid #dcebea;
-    border-radius: 6px;
+    border: 3px solid #dcebea;
+    border-radius: 8px;
 }
 
 .scroll-stage::after {
     content: "";
     display: block;
-    height: 750vh;
+    height: 400vh;
     width: 1px;
 }
 
@@ -81,380 +81,76 @@ html::-webkit-scrollbar-thumb {
     height: 100%;
     display: block;
     pointer-events: none;
-    z-index: 0;
 }
 
 #heroPin {
     top: 0;
     z-index: 1;
-    overflow: hidden;
-    position: relative;
-    padding: 16px 20px;
 }
 
-.content_div {
-    width: 68%;
-    display: block;
-    margin-left: 8px;
-    position: relative;
-    z-index: 2;
-    padding-bottom: 24px;
-}
-
-/* Hero Section */
-.hero-title {
-    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-    font-weight: 800;
-    line-height: 1.15;
-    color: #174b57;
-    margin: 0 0 10px 0;
-}
-
-.hero-title span {
-    color: #2a9d8f;
-}
-
-.hero-subtitle {
-    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
-    line-height: 1.5;
-    color: #48656d;
-    max-width: 620px;
-    margin: 0 0 18px 0;
-}
-
-.connected-containers {
-    display: flex;
-    align-items: stretch;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-}
-
-.connected-container {
-    flex: 1 1 140px;
-    min-width: 140px;
-    max-width: 220px;
-    padding: 12px 14px;
-    color: #183b43;
-    background: #eaf4f7;
-    border: 1px solid #b8dce6;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(24, 59, 67, 0.06);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.connected-container .card-header-small {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
-
-.connected-container h4 {
-    line-height: 1.2;
-    margin: 0;
-    font-size: 0.85rem;
-    color: #174b57;
-    font-weight: 700;
-}
-
-.connected-container .card-value {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #174b57;
-    margin: 6px 0 0 0;
-}
-
-/* Service Highlights Quick Grid */
-.quick-services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 14px;
+.dashbord {
     width: 100%;
-}
-
-.service-chip-card {
-    background: #ffffff;
-    border: 1px solid #d6e6e3;
-    border-radius: 10px;
-    padding: 12px;
+    height: 50px;
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    box-shadow: 0 4px 10px rgba(24, 59, 67, 0.05);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.service-chip-card:hover {
-    transform: translateY(-2px);
-    border-color: #35d4e6;
-    box-shadow: 0 8px 18px rgba(24, 59, 67, 0.12);
-}
-
-.service-chip-card .chip-top {
-    display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 8px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: #174b57;
-}
-
-.service-chip-card .chip-desc {
-    font-size: 0.8rem;
-    color: #5d757d;
-    margin: 0;
-    line-height: 1.3;
-}
-
-.service-chip-card .chip-action {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #24636a;
-    display: flex;
-    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 2px;
     gap: 4px;
-    margin-top: 4px;
+    color: #fff;
 }
 
-/* Section Common Headers */
-.section-header-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 14px;
-    border-bottom: 2px solid #e5f0ee;
-    padding-bottom: 8px;
-    width: 100%;
+.dashbord a {
+    text-decoration: none;
+    font-family: serif;
+    color: #eaf8f5;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    /* margin: 0 10px; */
 }
 
-.section-title {
-    margin: 0;
-    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-    color: #174b57;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+.content_div{
+    width: 70%;
+    display:block;
+    margin-left: 8px;
 
-.section-subtitle {
-    margin: 2px 0 0 0;
-    color: #5d757d;
-    font-size: 0.85rem;
-}
-
-/* =======================================================
-   1. BLOOD BANK MODULE
-   ======================================================= */
-.blood-bank-module {
-    background: #fffafa;
-    border: 1px solid #f9dede;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 18px rgba(230, 57, 70, 0.06);
-}
-
-.blood-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 14px;
-}
-
-.blood-group-card {
-    background: #ffffff;
-    border: 1px solid #f2cccc;
-    border-radius: 10px;
-    padding: 10px 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.03);
-}
-
-.blood-group-card .bg-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.blood-group-card .group-badge {
-    font-size: 1.15rem;
-    font-weight: 900;
-    color: #e63946;
-}
-
-.blood-group-card .status-pill {
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 12px;
-    text-transform: uppercase;
-}
-
-.status-pill.status-available {
-    background: #e3f8f2;
-    color: #1b8a78;
-}
-
-.status-pill.status-low {
-    background: #fff3db;
-    color: #c97d08;
-}
-
-.status-pill.status-critical {
-    background: #ffe8e8;
-    color: #d90429;
-}
-
-.blood-units-count {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #183b43;
-    margin: 4px 0 2px 0;
-}
-
-.blood-stock-bar {
-    width: 100%;
-    height: 6px;
-    background: #f0f0f0;
-    border-radius: 99px;
-    overflow: hidden;
-    margin-top: 4px;
-}
-
-.blood-stock-fill {
-    height: 100%;
-    border-radius: 99px;
-    background: #e63946;
-}
-
-.blood-actions-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* =======================================================
-   2. ORGAN DONATION MODULE
-   ======================================================= */
-.organ-donation-module {
-    background: #f2fbf8;
-    border: 1px solid #d1f0e7;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 18px rgba(42, 157, 143, 0.07);
-}
-
-.organ-stat-banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #174b57;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 12px 18px;
-    margin-bottom: 14px;
-}
-
-.organ-stat-banner .stat-num {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #35d4e6;
-}
-
-.organs-supported-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 14px;
-}
-
-.organ-item {
-    background: #ffffff;
-    border: 1px solid #cce8e0;
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #174b57;
-}
-
-/* =======================================================
-   3. VACCINE & IMMUNIZATION HUB
-   ======================================================= */
-.vaccine-module {
-    background: #f2f7fc;
-    border: 1px solid #d4e4f5;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 18px rgba(36, 99, 160, 0.06);
-}
-
-.vaccine-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.vaccine-card {
-    background: #ffffff;
-    border: 1px solid #dbe6f2;
-    border-radius: 10px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 8px;
-}
-
-.vaccine-card .vax-title {
-    font-weight: 700;
-    color: #174b57;
-    font-size: 0.95rem;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.vaccine-card .vax-meta {
-    font-size: 0.78rem;
-    color: #5d757d;
-    margin: 0;
-}
-
-/* =======================================================
-   4. DOCTOR DIRECTORY
-   ======================================================= */
-.doctors-section {
-    width: 100%;
-    margin-left: 0;
-    position: relative;
-    clear: both;
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
 
 .doctors {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    gap: 16px;
     width: 100%;
-    padding: 10px 0 16px 0;
+    padding: 24px 8px 32px;
+}
+
+.doctors-section {
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+    clear: both;
+    margin-top: 24px;
+}
+
+.about-section,
+.services-section,
+.doctors-section {
+    display: flow-root;
+}
+
+@media (min-width: 768px) {
+    .services-section {
+        /* The pinned doctor composition is translated visually; reserve its travel space. */
+        margin-bottom: clamp(80px, 10vh, 120px) !important;
+    }
+}
+
+.doctors-title {
+    grid-column: 1 / -1;
+    margin: 0 0 2px;
+    color: #183b43;
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
 }
 
 .doctor_card {
@@ -464,16 +160,12 @@ html::-webkit-scrollbar-thumb {
     border-radius: 12px;
     background: #ffffff;
     box-shadow: 0 6px 16px rgba(24, 59, 67, 0.08);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .doctor-image-frame {
-    height: 180px;
+    height: 190px;
     overflow: hidden;
     background: #d9edf4;
-    position: relative;
 }
 
 .doc_img {
@@ -484,140 +176,207 @@ html::-webkit-scrollbar-thumb {
     object-position: center top;
 }
 
-.doctor-badge-tag {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: rgba(23, 75, 87, 0.85);
-    color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 20px;
-    backdrop-filter: blur(4px);
-}
-
 .doctor-info {
     padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
 }
 
 .doctor-info h3 {
     margin: 0;
     color: #183b43;
-    font-size: 0.96rem;
-    font-weight: 700;
+    font-size: 0.98rem;
 }
 
 .doctor-info p {
-    margin: 0;
+    margin: 5px 0 10px;
     color: #52606d;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.82rem;
 }
 
-.doctor-info .availability {
+.doctor-info span {
     display: inline-block;
     color: #24636a;
     font-size: 0.72rem;
-    font-weight: 700;
-    margin-top: 2px;
+    font-weight: 600;
 }
 
-.doctor-info .book-doc-btn {
-    margin-top: 8px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    width: 100%;
+@media (min-width: 768px) and (max-width: 1366px) {
+    .content_div {
+        width: 78%;
+    }
+
+    .about.content_div {
+        width: 100%;
+    }
 }
 
-/* =======================================================
-   5. EMERGENCY & CONTACT
-   ======================================================= */
-.emergency-contact-module {
-    background: linear-gradient(135deg, #174b57 0%, #1e5a68 100%);
-    color: #ffffff;
-    border-radius: 14px;
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    box-shadow: 0 8px 24px rgba(23, 75, 87, 0.2);
-    margin-bottom: 24px;
+.connected-container{
+    width: clamp(120px, 32vw, 130px);
+    min-width: 130px;
+    height: clamp(92px, 10vw, 112px);
+    padding: 9px;
+    padding-top: 14px;
+    padding-bottom: 0;
+    color: #183b43;
+    box-sizing: border-box;
+    background: #d9edf4;
+    border: 1px solid #b8dce6;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(24, 59, 67, 0.1);
+    position: relative;
+    line-height: 17px;
 }
 
-.emergency-contact-module h3 {
-    margin: 0 0 6px 0;
-    font-size: 1.25rem;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.connected-container::before {
+    display: none;
 }
 
-.emergency-contact-module p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: #cde6ec;
+@media (max-width: 767px) {
+    .container,
+    .scroll-stage {
+        width: calc(100% - 16px);
+    }
+
+    .content_div {
+        width: min(70%, 100%);
+        margin-left: 4px;
+    }
+
+    .doctors-section {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .doctors {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 20px 4px 28px;
+    }
+
+    .doctor-image-frame {
+        height: 170px;
+    }
+
+    .connected-container {
+        width: clamp(130px, 42vw, 140px);
+        min-width: 130px;
+        height: 100px;
+    }
+
+    .pannel {
+        padding: 0 8px;
+    }
+
+    .dashbord {
+        width: auto;
+        height: 100%;
+        margin-left: auto;
+        margin-top: 0;
+        gap: 2px;
+        font-size: 0.85rem;
+    }
+
+    .dashbord a {
+        font-size: 0.85rem;
+    }
+
+    .bank_name {
+        max-width: 34%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
 }
 
-.emergency-phone-tag {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #ff9f1c;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 8px 16px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+@media (max-width: 767px) and (orientation: portrait) {
+    html,
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll !important;
+        scrollbar-width: auto;
+        scrollbar-color: #174b57 #dcebea;
+        touch-action: pan-y;
+    }
+
+    .main {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .container {
+        height: auto;
+        min-height: 100vh;
+        position: relative;
+        top: auto;
+        overflow: visible;
+    }
+
+    .scroll-stage {
+        height: auto;
+        margin-top: 20px;
+        overflow: visible !important;
+        scrollbar-gutter: auto;
+    }
+
+    .scroll-stage::after {
+        display: none;
+    }
+
+    #heroPin {
+        position: relative;
+        top: auto;
+        height: auto;
+        min-height: 120px;
+        overflow: visible;
+    }
+
+    .doc-canvas {
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .doctor-showcase {
+        width: 100%;
+        margin: 10px 0 !important;
+        display: flex;
+        justify-content: center;
+        --doctor-width: calc(min(64vh, 480px) * 0.6667);
+    }
+
+    .doctor-showcase .pill {
+        height: 52vh;
+        margin: 0 auto;
+    }
+
+    .doctor-showcase .doc_male {
+        height: min(64vh, 480px);
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
-/* Doctor Showcase Center Elements */
+/* The male doctor is positioned by home.js beside the animated canvas doctor. */
 .doctor-showcase {
     position: relative;
     --doctor-width: min(42.67vh, 520px);
     --pill-width: clamp(180px, 18vw, 230px);
-    margin: 10px 8px;
 }
 
 .chat-bubble {
-    padding: 8px 12px;
-    --bubble-width: clamp(120px, 13vw, 175px);
-    --bubble-height: clamp(64px, 7vw, 92px);
+    padding: 10px;
+    --bubble-width: clamp(108px, 12vw, 164px);
+    --bubble-height: clamp(68px, 8vw, 104px);
     position: absolute;
     z-index: 2;
     width: var(--bubble-width);
     height: var(--bubble-height);
     border: 1px solid #d6e6e3;
-    border-radius: 12px;
-    background: #ffffff;
-    color: #174b57;
-    font: 700 0.76rem/1.25 'Segoe UI', sans-serif;
-    box-shadow: 0 8px 20px rgba(24, 59, 67, 0.12);
+    border-radius: 10px;
+    background: #fff8f3;
+    color: #8c4e3b;
+    font: 600 0.78rem/1.2 'Segoe UI', sans-serif;
+    box-shadow: 0 7px 16px rgba(24, 59, 67, 0.1);
     pointer-events: none;
     animation: chat-float 4.8s ease-in-out infinite;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.chat-bubble .bubble-label {
-    font-size: 0.65rem;
-    color: #6a8b93;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 2px;
-}
-
-.chat-bubble .bubble-val {
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: #174b57;
 }
 
 .chat-bubble--behind {
@@ -627,7 +386,11 @@ html::-webkit-scrollbar-thumb {
 .chat-bubble--right,
 .chat-bubble--left.chat-bubble--lower {
     background: #eef8f6;
-    border-color: #bee2db;
+    color: #24636a;
+}
+
+.chat-bubble::before {
+    display: none;
 }
 
 .chat-bubble--left {
@@ -639,7 +402,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .chat-bubble--upper {
-    top: 5%;
+    top: 0%;
 }
 
 .chat-bubble--left.chat-bubble--upper {
@@ -647,12 +410,11 @@ html::-webkit-scrollbar-thumb {
 }
 
 .chat-bubble--right.chat-bubble--upper {
-    top: 15%;
-    animation-delay: -1.1s;
+    top: 18%;
 }
 
 .chat-bubble--lower {
-    bottom: 12%;
+    bottom: 10%;
     animation-delay: -2.2s;
 }
 
@@ -662,19 +424,32 @@ html::-webkit-scrollbar-thumb {
 
 .chat-bubble--right.chat-bubble--lower {
     bottom: 5%;
+}
+
+.chat-bubble--right.chat-bubble--upper {
+    animation-delay: -1.1s;
+}
+
+.chat-bubble--right.chat-bubble--lower {
     animation-delay: -3.4s;
 }
 
 @keyframes chat-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
 }
 
 .doctor-showcase .pill {
     position: relative;
     width: var(--pill-width);
     height: 52vh;
-    margin: 80px auto 40px auto;
+    margin: 100px auto;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -706,236 +481,14 @@ html::-webkit-scrollbar-thumb {
     opacity: 1;
 }
 
+/* Fallback size before the image has been measured by JavaScript. */
 .doc_male {
     height: 400px;
 }
 
-/* =======================================================
-   6. INTERACTIVE MODALS
-   ======================================================= */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 39, 45, 0.7);
-    backdrop-filter: blur(6px);
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    animation: fadeIn 0.2s ease-out;
-}
-
-.modal-overlay.is-active {
-    display: flex;
-}
-
-.modal-box {
-    background: #ffffff;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 480px;
-    box-shadow: 0 24px 48px rgba(15, 39, 45, 0.35);
-    border: 1px solid #d6e6e3;
-    overflow: hidden;
-    animation: slideUp 0.25s ease-out;
-}
-
-.modal-header {
-    background: #174b57;
-    color: #ffffff;
-    padding: 16px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal-header h3 {
-    margin: 0;
-    font-size: 1.15rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.modal-close-btn {
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
-    padding: 0;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-}
-
-.modal-close-btn:hover {
-    opacity: 1;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.form-group {
-    margin-bottom: 14px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #174b57;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 9px 12px;
-    border: 1px solid #c9ded9;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    background: #fdfdfd;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #35d4e6;
-    box-shadow: 0 0 0 3px rgba(53, 212, 230, 0.2);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-/* Toast Notification */
-.toast-msg {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #174b57;
-    color: #ffffff;
-    padding: 12px 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    font-size: 0.9rem;
-    font-weight: 600;
-    z-index: 10000;
-    display: none;
-    align-items: center;
-    gap: 10px;
-    border-left: 4px solid #35d4e6;
-    animation: slideInRight 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-    from { transform: translateX(50px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-/* Media Queries */
-@media (max-width: 1024px) {
-    .content_div {
-        width: 78%;
-    }
-    .doctors {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .blood-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 767px) {
-    .container, .scroll-stage {
-        width: calc(100% - 16px);
-    }
-    .content_div {
-        width: 100%;
-        margin-left: 0;
-    }
-    .quick-services-grid,
-    .organs-supported-grid,
-    .vaccine-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    .doctors {
-        grid-template-columns: 1fr;
-    }
-    .dashbord {
-        display: none;
-    }
-}
-
 @media (max-width: 767px) and (orientation: portrait) {
-    html, body {
-        overflow-x: hidden;
-        overflow-y: scroll !important;
-        touch-action: pan-y;
-    }
-    .main {
-        height: auto;
-        min-height: 100vh;
-    }
-    .container {
-        height: auto;
-        min-height: 100vh;
-        position: relative;
-        top: auto;
-        overflow: visible;
-    }
-    .scroll-stage {
-        height: auto;
-        margin-top: 15px;
-        overflow: visible !important;
-    }
-    .scroll-stage::after {
-        display: none;
-    }
-    #heroPin {
-        position: relative;
-        top: auto;
-        height: auto;
-        min-height: 120px;
-        overflow: visible;
-    }
-    .doc-canvas {
-        display: none !important;
-        visibility: hidden;
-    }
-    .doctor-showcase {
-        width: 100%;
-        margin: 10px 0 !important;
-        display: flex;
-        justify-content: center;
-        --doctor-width: calc(min(64vh, 480px) * 0.6667);
-    }
-    .doctor-showcase .pill {
-        height: 48vh;
-        margin: 0 auto;
-    }
     .doctor-showcase .doc_male {
-        height: min(60vh, 440px);
+        height: min(64vh, 480px);
         visibility: visible;
         opacity: 1;
     }

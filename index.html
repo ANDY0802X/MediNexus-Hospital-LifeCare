@@ -4,568 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediNexus | Hospital, Blood Bank, Organ Donation & Vaccine Hub</title>
-    
-    <!-- Meta description & SEO -->
-    <meta name="description" content="MediNexus is a comprehensive healthcare portal integrating 24/7 hospital care, real-time blood bank inventory, organ donation registry, vaccine immunization management, and specialist doctor consultations.">
-    <meta name="keywords" content="hospital, blood bank, organ donation, vaccine, immunization, doctors, healthcare, emergency care, medi nexus">
-    
-    <!-- Open Graph / Facebook / LinkedIn / Discord -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="MediNexus | Comprehensive Hospital & Life Services Portal">
-    <meta property="og:description" content="Integrated 24/7 healthcare ecosystem covering Blood Bank, Organ Donor Registry, Vaccine Hub, and Specialist Consultations.">
-    <meta property="og:image" content="assets/img/social_preview.png">
-
-    <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="MediNexus | Healthcare & Life Services">
-    <meta property="twitter:description" content="Integrated 24/7 healthcare ecosystem covering Blood Bank, Organ Donor Registry, Vaccine Hub, and Specialist Consultations.">
-    <meta property="twitter:image" content="assets/img/social_preview.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
-    <!-- Stylesheets -->
+    <title>XYZ Hospital</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
     <div class="main">
-        <!-- Top Navigation Bar -->
         <header class="pannel clay-card">
-            <a href="index.html" class="brand-wrapper">
-                <div class="logo">
-                    <img src="assets/img/doc_half.png" alt="MediNexus Logo">
-                </div>
-                <div class="bank_name">
-                    <p class="brand-title">MediNexus <span>+</span></p>
-                    <p class="brand-subtitle">Hospital & Life Services</p>
-                </div>
-            </a>
-            
-            <nav class="dashbord">
-                <a href="#about">About</a>
-                <a href="#blood-bank">🩸 Blood Bank</a>
-                <a href="#organ-donation">🫀 Organ Donation</a>
-                <a href="#vaccines">💉 Vaccines</a>
-                <a href="#doctors">🩺 Doctors</a>
-                <a href="#emergency">🚨 Emergency</a>
-                <a href="html/login_page.html" class="portal-btn">👤 Portal Login</a>
-            </nav>
+            <div class="logo clay-card">
+                <img src="assets/img/doc_half.png" alt="doc" style="display: block; width: 100%; height: auto;">
+            </div>
+            <section class="bank_name">
+                <p>NAME</p>
+            </section>
+            <section class="dashbord"><a href=""> About</a> | <a href="">Services</a>| <a href="">Doctors</a> | <a
+                    href="">Contact</a></section>
+            </section>
         </header>
 
-        <!-- Main Scroll Stage (Houses scroll-driven doctor canvas & content) -->
         <div class="scroll-stage" id="scrollStage">
             <div class="container clay-card" id="heroPin">
-                
-                <!-- 1. ABOUT & HERO SECTION -->
-                <section class="content_div about-section" id="about">
-                    <h1 class="hero-title">Advancing Healthcare, <span>Saving Lives.</span></h1>
-                    <p class="hero-subtitle">
-                        MediNexus connects patients with unified life-saving services — including 24/7 blood bank inventory, an organ donation registry, routine and booster immunization scheduling, and expert doctor consultations.
-                    </p>
-
-                    <!-- Top Stats Highlights -->
-                    <div class="connected-containers">
-                        <div class="connected-container">
-                            <div class="card-header-small">
-                                <h4>Open<br>Hours</h4>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#174b57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="9"></circle>
-                                    <polyline points="12 7 12 12 15 14"></polyline>
-                                </svg>
+                <section class="content_div about-section">
+                    <h1 style="margin-left: 6px;">Welcome to XYZ Hospital</h1>
+                    <div class="about content_div">
+                        <p>We are committed to providing the best healthcare services to our patients. Our team of
+                            experienced doctors and staff are here to ensure your well-being.</p>
+                        <div class="connected-containers" style="display: flex; align-items: stretch; gap: 1rem;">
+                            <div class="connected-container">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: flex-start; gap: 0.25rem;">
+                                    <h4 style="line-height: 20px; margin: 0;">Open <br> hours</h4><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true"
+                                        style="display: block; width: 40px; height: 40px; min-width: 40px; flex: 0 0 40px; margin: 0;">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                        <polyline points="12 7 12 12 15 14"></polyline>
+                                    </svg>
+                                </div>
+                                <p>
+                                    <center style="font-size: larger; font-weight: 700;">24/7</center>
+                                </p>
                             </div>
-                            <p class="card-value">24 / 7 Care</p>
-                        </div>
-                        
-                        <div class="connected-container">
-                            <div class="card-header-small">
-                                <h4>Emergency<br>Hotline</h4>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
+                            <div class="connected-container">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: flex-start; gap: 0.25rem;">
+                                    <h4 style="line-height: 20px; margin: 0;">Emergency<br>Services <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: inline-block; width: 20px; height: 20px; margin-left: 0.25rem; vertical-align: middle;">
+                                            <path d="M22.54 16.88a10 10 0 1 1-5.32-5.32L22 2"></path>
+                                            <polyline points="22 2 22 8 16"></polyline>
+                                        </svg></h4>
+                                </div>
+                                <p style="font-size: small; font-weight: 700;">+91 8619216569</p>
                             </div>
-                            <p class="card-value" style="font-size: 0.95rem; color: #e63946;">+91 8619216569</p>
-                        </div>
-
-                        <div class="connected-container">
-                            <div class="card-header-small">
-                                <h4>Blood Bank<br>Stock</h4>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                                </svg>
-                            </div>
-                            <p class="card-value" style="color: #2a9d8f;">1,420+ Units</p>
-                        </div>
-                    </div>
-
-                    <!-- Quick Navigation Chips -->
-                    <div class="quick-services-grid">
-                        <div class="service-chip-card" onclick="openModal('bloodModal')">
-                            <div class="chip-top">🩸 Blood Bank</div>
-                            <p class="chip-desc">Check blood group inventory, donate blood, or request urgent units.</p>
-                            <div class="chip-action">Donate / Request Blood &rarr;</div>
-                        </div>
-                        <div class="service-chip-card" onclick="openModal('organModal')">
-                            <div class="chip-top">🫀 Organ Donation</div>
-                            <p class="chip-desc">Pledge organ donation, join registry, and check transplant programs.</p>
-                            <div class="chip-action">Sign Organ Pledge &rarr;</div>
-                        </div>
-                        <div class="service-chip-card" onclick="openModal('vaxModal')">
-                            <div class="chip-top">💉 Vaccine Hub</div>
-                            <p class="chip-desc">Routine childhood shots, seasonal influenza, COVID-19 & travel vaccines.</p>
-                            <div class="chip-action">Book Vaccine Slot &rarr;</div>
                         </div>
                     </div>
                 </section>
-
-                <!-- 2. DOCTOR SHOWCASE (Interactive Scroll Character Scene) -->
-                <section class="content_div doctor-showcase services-section">
-                    <div class="chat-bubble chat-bubble--left chat-bubble--upper chat-bubble--behind" aria-hidden="true">
-                        <span class="bubble-label">🩸 Blood Bank</span>
-                        <span class="bubble-val">All Groups Ready</span>
-                    </div>
-                    <div class="chat-bubble chat-bubble--left chat-bubble--lower chat-bubble--inverted" aria-hidden="true">
-                        <span class="bubble-label">🫀 Organ Registry</span>
-                        <span class="bubble-val">12,850+ Pledges</span>
-                    </div>
-                    <div class="chat-bubble chat-bubble--right chat-bubble--upper chat-bubble--inverted" aria-hidden="true">
-                        <span class="bubble-label">💉 Vaccine Center</span>
-                        <span class="bubble-val">98.7% Safe Coverage</span>
-                    </div>
-                    <div class="chat-bubble chat-bubble--right chat-bubble--lower chat-bubble--behind" aria-hidden="true">
-                        <span class="bubble-label">🩺 Top Specialists</span>
-                        <span class="bubble-val">24/7 Availability</span>
-                    </div>
+                <section style="margin: 10px 8px;" class="content_div doctor-showcase services-section">
+                    <div class="chat-bubble chat-bubble--left chat-bubble--upper chat-bubble--behind"
+                        aria-hidden="true">hello</div>
+                    <div class="chat-bubble chat-bubble--left chat-bubble--lower chat-bubble--inverted"
+                        aria-hidden="true">world</div>
+                    <div class="chat-bubble chat-bubble--right chat-bubble--upper chat-bubble--inverted"
+                        aria-hidden="true">i am</div>
+                    <div class="chat-bubble chat-bubble--right chat-bubble--lower chat-bubble--behind"
+                        aria-hidden="true"> aayush</div>
                     <div class="services">
                         <div class="pill">
-                            <img src="assets/img/doc_full.png" alt="Lead Physician" class="doc_male" id="maleDoctor">
+                            <img src="assets/img/doc_full.png" alt="Male doctor" class="doc_male" id="maleDoctor">
                         </div>
                     </div>
                 </section>
-
-                <!-- 3. BLOOD BANK MANAGEMENT MODULE -->
-                <section class="content_div" id="blood-bank">
-                    <div class="blood-bank-module">
-                        <div class="section-header-block">
-                            <div>
-                                <h2 class="section-title">🩸 Blood Bank & Donor Match</h2>
-                                <p class="section-subtitle">Real-time blood stock tracking and verified donor registry.</p>
-                            </div>
-                            <div class="blood-actions-row">
-                                <button class="btn-accent-red" onclick="openModal('bloodModal', 'donate')">➕ Register as Donor</button>
-                                <button class="btn-outline" onclick="openModal('bloodModal', 'request')">🚨 Emergency Request</button>
-                            </div>
-                        </div>
-
-                        <!-- Live Blood Inventory Grid -->
-                        <div class="blood-grid">
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">A+</span>
-                                    <span class="status-pill status-available">Available</span>
-                                </div>
-                                <div class="blood-units-count">245 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 82%;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">A-</span>
-                                    <span class="status-pill status-low">Low Stock</span>
-                                </div>
-                                <div class="blood-units-count">48 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 32%; background: #c97d08;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">B+</span>
-                                    <span class="status-pill status-available">Available</span>
-                                </div>
-                                <div class="blood-units-count">310 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 90%;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">B-</span>
-                                    <span class="status-pill status-critical">Critical</span>
-                                </div>
-                                <div class="blood-units-count">19 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 15%; background: #d90429;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">O+</span>
-                                    <span class="status-pill status-available">Available</span>
-                                </div>
-                                <div class="blood-units-count">420 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 95%;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">O-</span>
-                                    <span class="status-pill status-low">Universal Donor</span>
-                                </div>
-                                <div class="blood-units-count">55 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 38%; background: #c97d08;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">AB+</span>
-                                    <span class="status-pill status-available">Available</span>
-                                </div>
-                                <div class="blood-units-count">210 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 75%;"></div></div>
-                            </div>
-                            <div class="blood-group-card">
-                                <div class="bg-top">
-                                    <span class="group-badge">AB-</span>
-                                    <span class="status-pill status-critical">Critical</span>
-                                </div>
-                                <div class="blood-units-count">14 Units</div>
-                                <div class="blood-stock-bar"><div class="blood-stock-fill" style="width: 12%; background: #d90429;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 4. ORGAN DONATION REGISTRY MODULE -->
-                <section class="content_div" id="organ-donation">
-                    <div class="organ-donation-module">
-                        <div class="section-header-block">
-                            <div>
-                                <h2 class="section-title">🫀 Organ Donation & Life Registry</h2>
-                                <p class="section-subtitle">Be a hero. One organ donor can save up to 8 lives and heal 75+ more.</p>
-                            </div>
-                            <button class="btn-accent-green" onclick="openModal('organModal')">✍️ Sign Organ Pledge</button>
-                        </div>
-
-                        <div class="organ-stat-banner">
-                            <div>
-                                <div style="font-size: 0.85rem; color: #a8d5db; font-weight: 600;">ACTIVE NATIONAL PLEDGES</div>
-                                <div class="stat-num">12,850+ Donors Enrolled</div>
-                            </div>
-                            <div style="text-align: right; font-size: 0.85rem;">
-                                <span>🔒 100% Confidential & Legally Verified</span>
-                            </div>
-                        </div>
-
-                        <div class="organs-supported-grid">
-                            <div class="organ-item">🫀 Heart & Heart Valves</div>
-                            <div class="organ-item">🫁 Lungs (Single & Bilateral)</div>
-                            <div class="organ-item">🩺 Kidneys & Nephron Graft</div>
-                            <div class="organ-item">🧪 Liver (Split & Full)</div>
-                            <div class="organ-item">👁️ Cornea (Sight Restoration)</div>
-                            <div class="organ-item">🦴 Bone Marrow & Stem Cells</div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 5. VACCINATION & IMMUNIZATION HUB -->
-                <section class="content_div" id="vaccines">
-                    <div class="vaccine-module">
-                        <div class="section-header-block">
-                            <div>
-                                <h2 class="section-title">💉 Vaccination & Immunization Hub</h2>
-                                <p class="section-subtitle">WHO-approved routine schedules, seasonal boosters, and certificate verification.</p>
-                            </div>
-                            <button class="btn-primary" onclick="openModal('vaxModal')">📅 Book Vaccine Slot</button>
-                        </div>
-
-                        <div class="vaccine-cards-grid">
-                            <div class="vaccine-card">
-                                <div>
-                                    <h3 class="vax-title">🛡️ COVID-19 & Flu Annual Boosters</h3>
-                                    <p class="vax-meta">Recommended for all age groups (6 months and older). Available daily.</p>
-                                </div>
-                                <button class="btn-outline" style="align-self: flex-start;" onclick="openModal('vaxModal', 'COVID-19 Booster')">Schedule Shot</button>
-                            </div>
-                            <div class="vaccine-card">
-                                <div>
-                                    <h3 class="vax-title">👶 Child Immunization (MMR, Polio, DTaP)</h3>
-                                    <p class="vax-meta">Complete national childhood immunization schedule with pediatric consultation.</p>
-                                </div>
-                                <button class="btn-outline" style="align-self: flex-start;" onclick="openModal('vaxModal', 'Childhood Vaccines')">Schedule Shot</button>
-                            </div>
-                            <div class="vaccine-card">
-                                <div>
-                                    <h3 class="vax-title">💉 Hepatitis B & Tetanus (Tdap)</h3>
-                                    <p class="vax-meta">Adult primary series and 10-year booster shots for active protection.</p>
-                                </div>
-                                <button class="btn-outline" style="align-self: flex-start;" onclick="openModal('vaxModal', 'Hepatitis B / Tdap')">Schedule Shot</button>
-                            </div>
-                            <div class="vaccine-card">
-                                <div>
-                                    <h3 class="vax-title">✈️ Travel & Yellow Fever Vaccines</h3>
-                                    <p class="vax-meta">International travel vaccines with authenticated WHO digital health cards.</p>
-                                </div>
-                                <button class="btn-outline" style="align-self: flex-start;" onclick="openModal('vaxModal', 'Travel Vaccines')">Schedule Shot</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 6. DOCTOR DIRECTORY -->
-                <section class="content_div doctors-section" id="doctors">
-                    <div class="section-header-block">
-                        <div>
-                            <h2 class="section-title">🩺 Medical Specialists & Consultants</h2>
-                            <p class="section-subtitle">Board-certified doctors across cardiology, transplant nephrology, hematology, and pediatrics.</p>
-                        </div>
-                    </div>
-
+                <section class="content_div doctors-section">
                     <div class="doctors">
+                        <h2 class="doctors-title">Our doctors</h2>
                         <div class="doctor_card">
                             <div class="doctor-image-frame">
                                 <img src="assets/img/docs/sample_doc01.png" alt="Dr. James Carter" class="doc_img">
-                                <span class="doctor-badge-tag">Cardiology</span>
                             </div>
                             <div class="doctor-info">
                                 <h3>Dr. James Carter</h3>
-                                <p>MD, Senior Cardiologist</p>
-                                <span class="availability">🟢 Available Today</span>
-                                <button class="btn-primary book-doc-btn" onclick="openModal('doctorModal', 'Dr. James Carter (Cardiology)')">Book Consultation</button>
+                                <p>Cardiology</p>
+                                <span>Available today</span>
                             </div>
                         </div>
-
                         <div class="doctor_card">
                             <div class="doctor-image-frame">
                                 <img src="assets/img/docs/sample_doc02.png" alt="Dr. Maya Rao" class="doc_img">
-                                <span class="doctor-badge-tag">Transplant & Nephrology</span>
                             </div>
                             <div class="doctor-info">
                                 <h3>Dr. Maya Rao</h3>
-                                <p>Head of Organ Transplant</p>
-                                <span class="availability">🟢 Available Tomorrow</span>
-                                <button class="btn-primary book-doc-btn" onclick="openModal('doctorModal', 'Dr. Maya Rao (Transplants)')">Book Consultation</button>
+                                <p>Internal medicine</p>
+                                <span>Available tomorrow</span>
                             </div>
                         </div>
-
                         <div class="doctor_card">
                             <div class="doctor-image-frame">
                                 <img src="assets/img/docs/sample_doc_03.png" alt="Dr. Arjun Mehta" class="doc_img">
-                                <span class="doctor-badge-tag">Hematology & Blood Bank</span>
                             </div>
                             <div class="doctor-info">
                                 <h3>Dr. Arjun Mehta</h3>
-                                <p>Chief Hematologist</p>
-                                <span class="availability">🟢 Available Today</span>
-                                <button class="btn-primary book-doc-btn" onclick="openModal('doctorModal', 'Dr. Arjun Mehta (Hematology)')">Book Consultation</button>
+                                <p>General medicine</p>
+                                <span>Available today</span>
                             </div>
                         </div>
-
                         <div class="doctor_card">
                             <div class="doctor-image-frame">
                                 <img src="assets/img/docs/sample_doc_04.png" alt="Dr. Elena Brooks" class="doc_img">
-                                <span class="doctor-badge-tag">Pediatrics & Vaccines</span>
                             </div>
                             <div class="doctor-info">
                                 <h3>Dr. Elena Brooks</h3>
-                                <p>Immunization Lead</p>
-                                <span class="availability">🟢 Available Friday</span>
-                                <button class="btn-primary book-doc-btn" onclick="openModal('doctorModal', 'Dr. Elena Brooks (Pediatrics)')">Book Consultation</button>
+                                <p>Family medicine</p>
+                                <span>Available Friday</span>
                             </div>
                         </div>
                     </div>
                 </section>
+                <section class="content_div">
+                    <div class="contact">
 
-                <!-- 7. EMERGENCY & 24/7 HELPLINE -->
-                <section class="content_div" id="emergency">
-                    <div class="emergency-contact-module">
-                        <div>
-                            <h3>🚨 24/7 Rapid Emergency & Ambulance Dispatch</h3>
-                            <p>Immediate ICU triage, acute trauma care, and emergency blood transfusion unit.</p>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                            <span class="emergency-phone-tag">📞 +91 8619216569</span>
-                            <button class="btn-accent-red" style="padding: 10px 18px; font-weight: 800;" onclick="alert('Emergency Ambulance Request triggered! Dispatch unit will call you within 60 seconds.')">🚑 Call Ambulance</button>
-                        </div>
                     </div>
                 </section>
 
-                <!-- Canvas Doctor Animation Canvas -->
-                <canvas id="docCanvas" class="doc-canvas" role="img" aria-label="Animated illustration of medical professional"></canvas>
+                <canvas id="docCanvas" class="doc-canvas" role="img"
+                    aria-label="Animated illustration of a doctor, playing as you scroll"></canvas>
             </div>
         </div>
     </div>
-
-    <!-- ========================================================
-         INTERACTIVE POPUP MODALS
-         ======================================================== -->
-
-    <!-- 1. Blood Bank Modal -->
-    <div class="modal-overlay" id="bloodModal">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>🩸 Blood Bank Portal</h3>
-                <button class="modal-close-btn" onclick="closeModal('bloodModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="bloodForm" onsubmit="handleFormSubmit(event, 'Blood Bank request recorded successfully! Our coordinator will contact you shortly.')">
-                    <div class="form-group">
-                        <label>Action Type</label>
-                        <select id="bloodActionType" required>
-                            <option value="donate">Register as Blood Donor</option>
-                            <option value="request">Request Urgent Blood Units</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Blood Group</label>
-                            <select required>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="+91 9876543210" required>
-                        </div>
-                        <div class="form-group">
-                            <label>City / Location</label>
-                            <input type="text" placeholder="City" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn-accent-red" style="width: 100%; margin-top: 10px;">Submit Blood Request</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. Organ Donation Modal -->
-    <div class="modal-overlay" id="organModal">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>🫀 Organ Donor Pledge</h3>
-                <button class="modal-close-btn" onclick="closeModal('organModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="organForm" onsubmit="handleFormSubmit(event, 'Thank you! Your Organ Donor Pledge has been registered. A donor card will be issued to your email.')">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Legal Name</label>
-                            <input type="text" placeholder="Jane Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" min="18" max="99" placeholder="25" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" placeholder="jane@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" placeholder="+91 9876543210" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Organs you wish to pledge:</label>
-                        <select required>
-                            <option value="all">All Organs & Tissues (Kidneys, Heart, Liver, Corneas, Lungs)</option>
-                            <option value="cornea">Corneas (Eyes) Only</option>
-                            <option value="kidney">Kidneys Only</option>
-                            <option value="marrow">Bone Marrow Only</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-accent-green" style="width: 100%; margin-top: 10px;">Sign Legal Pledge</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. Vaccine Slot Modal -->
-    <div class="modal-overlay" id="vaxModal">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>💉 Book Vaccination Slot</h3>
-                <button class="modal-close-btn" onclick="closeModal('vaxModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="vaxForm" onsubmit="handleFormSubmit(event, 'Vaccination appointment confirmed! SMS confirmation with slot details has been sent.')">
-                    <div class="form-group">
-                        <label>Select Vaccine</label>
-                        <select id="vaxTypeSelect" required>
-                            <option value="COVID-19 Booster">COVID-19 Annual Booster</option>
-                            <option value="Influenza">Seasonal Influenza 2026</option>
-                            <option value="Childhood Vaccines">Childhood Immunization Series (MMR/Polio/DTaP)</option>
-                            <option value="Hepatitis B">Hepatitis B Vaccine</option>
-                            <option value="Travel Vaccines">International Travel Vaccines</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Patient Name</label>
-                            <input type="text" placeholder="Patient Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Preferred Date</label>
-                            <input type="date" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Mobile Number</label>
-                        <input type="tel" placeholder="+91 9876543210" required>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Confirm Vaccine Slot</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- 4. Doctor Appointment Modal -->
-    <div class="modal-overlay" id="doctorModal">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>🩺 Doctor Consultation</h3>
-                <button class="modal-close-btn" onclick="closeModal('doctorModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="doctorForm" onsubmit="handleFormSubmit(event, 'Doctor consultation booked successfully! Our clinic assistant will call you to confirm time.')">
-                    <div class="form-group">
-                        <label>Doctor / Specialty</label>
-                        <input type="text" id="doctorSelectField" value="Dr. James Carter (Cardiology)" readonly style="background: #eef4f6;">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Patient Name</label>
-                            <input type="text" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Consultation Date</label>
-                            <input type="date" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" placeholder="+91 9876543210" required>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Book Consultation</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast-msg">
-        <span id="toastText">Action successful!</span>
-    </div>
-
-    <!-- Scripts -->
     <script src="js/home.js" defer></script>
 </body>
 

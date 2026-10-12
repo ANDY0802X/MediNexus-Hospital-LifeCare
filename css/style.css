@@ -54,6 +54,37 @@ html {
     background: #174b57;
     border: 1px solid #286674;
     box-shadow: 0 8px 20px rgba(24, 59, 67, 0.14);
+    overflow: visible !important;
+}
+
+.nav-toggle-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px 8px;
+    margin-left: auto;
+    color: #eaf8f5;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+    border-radius: 8px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-toggle-btn:hover,
+.nav-toggle-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.nav-toggle-btn svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
 }
 
 .logo {

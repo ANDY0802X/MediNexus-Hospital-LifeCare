@@ -1,6 +1,31 @@
 (function () {
     "use strict";
 
+    // Mobile navigation toggle (runs across all viewport sizes and orientations)
+    var toggleBtn = document.getElementById("navToggleBtn");
+    var navMenu = document.querySelector(".dashbord");
+    if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            var isOpen = navMenu.classList.toggle("is-open");
+            toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+                navMenu.classList.remove("is-open");
+                toggleBtn.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        navMenu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("is-open");
+                toggleBtn.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
     var FRAME_COUNT = 40;
     var FRAME_PATH = function (i) {
         return "assets/img/frames_mine/frame-" + (i + 1) + ".png";

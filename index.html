@@ -16,21 +16,20 @@
                 <img src="assets/img/doc_half.png" alt="doc" style="display: block; width: 100%; height: auto;">
             </div>
             <section class="bank_name">
-                <p>NAME</p>
+                <p>MediNexus</p>
             </section>
-            <section class="dashbord"><a href=""> About</a> | <a href="">Services</a>| <a href="">Doctors</a> | <a
-                    href="">Contact</a></section>
-            </section>
+            <section class="dashbord dashboard"><a href="#about-medinexus"> About</a> | <a href="#services">Services</a>| <a href="#doctors">Doctors</a> | <a
+                    href="#contact">Contact</a></section>
         </header>
 
         <div class="scroll-stage" id="scrollStage">
             <div class="container clay-card" id="heroPin">
-                <section class="content_div about-section">
-                    <h1 style="margin-left: 6px;">Welcome to XYZ Hospital</h1>
+                <section class="content_div about-section" id="welcome">
+                    <h1 style="margin-left: 6px;">Welcome to MediNexus Hospital</h1>
                     <div class="about content_div">
-                        <p>We are committed to providing the best healthcare services to our patients. Our team of
-                            experienced doctors and staff are here to ensure your well-being.</p>
-                        <div class="connected-containers" style="display: flex; align-items: stretch; gap: 1rem;">
+                        <p><b>MediNexushospital is one of the leading healthcare providers in the region, committed to
+                            delivering comprehensive medical services with compassion and excellence.</b></p>
+                        <div class="connected-containers" style="display: flex; align-items: stretch; gap: 1rem; margin-bottom: 28px;">
                             <div class="connected-container">
                                 <div
                                     style="display: flex; align-items: center; justify-content: flex-start; gap: 0.25rem;">
@@ -64,23 +63,35 @@
                         </div>
                     </div>
                 </section>
-                <section style="margin: 10px 8px;" class="content_div doctor-showcase services-section">
+                <section style="margin: 80px 8px 30px 8px; padding-top: 20px;" class="content_div doctor-showcase services-section">
                     <div class="chat-bubble chat-bubble--left chat-bubble--upper chat-bubble--behind"
-                        aria-hidden="true">hello</div>
+                        aria-hidden="true" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; padding: 6px;">
+                        <img src="assets/img/moduleimages/bloodbank.png" alt="Blood Bank" style="height: 52%; width: auto; max-width: 100%; object-fit: contain;">
+                        <strong style="font-size: 0.74rem; font-weight: 900; line-height: 1.1;">Blood Bank</strong>
+                    </div>
                     <div class="chat-bubble chat-bubble--left chat-bubble--lower chat-bubble--inverted"
-                        aria-hidden="true">world</div>
+                        aria-hidden="true" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; padding: 6px;">
+                        <img src="assets/img/moduleimages/organ.png" alt="Organ Donation" style="height: 52%; width: auto; max-width: 100%; object-fit: contain;">
+                        <strong style="font-size: 0.74rem; font-weight: 900; line-height: 1.1;">Organ Donation</strong>
+                    </div>
                     <div class="chat-bubble chat-bubble--right chat-bubble--upper chat-bubble--inverted"
-                        aria-hidden="true">i am</div>
+                        aria-hidden="true" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; padding: 6px;">
+                        <img src="assets/img/moduleimages/vaccineimage.png" alt="Vaccine Hub" style="height: 52%; width: auto; max-width: 100%; object-fit: contain;">
+                        <strong style="font-size: 0.74rem; font-weight: 900; line-height: 1.1;">Vaccine Hub</strong>
+                    </div>
                     <div class="chat-bubble chat-bubble--right chat-bubble--lower chat-bubble--behind"
-                        aria-hidden="true"> aayush</div>
-                    <div class="services">
+                        aria-hidden="true" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; padding: 6px;">
+                        <img src="assets/img/moduleimages/transport.png" alt="Transport" style="height: 52%; width: auto; max-width: 100%; object-fit: contain;">
+                        <strong style="font-size: 0.74rem; font-weight: 900; line-height: 1.1;">Transport</strong>
+                    </div>
+                    <div class="services" id="services">
                         <div class="pill">
                             <img src="assets/img/doc_full.png" alt="Male doctor" class="doc_male" id="maleDoctor">
                         </div>
                     </div>
                 </section>
                 <section class="content_div doctors-section">
-                    <div class="doctors">
+                    <div class="doctors" id="doctors">
                         <h2 class="doctors-title">Our doctors</h2>
                         <div class="doctor_card">
                             <div class="doctor-image-frame">
@@ -110,7 +121,7 @@
                                 <h3>Dr. Arjun Mehta</h3>
                                 <p>General medicine</p>
                                 <span>Available today</span>
-                            </div>
+                            </div> 
                         </div>
                         <div class="doctor_card">
                             <div class="doctor-image-frame">
@@ -124,16 +135,55 @@
                         </div>
                     </div>
                 </section>
-                <section class="content_div">
-                    <div class="contact">
-
-                    </div>
-                </section>
-
                 <canvas id="docCanvas" class="doc-canvas" role="img"
                     aria-label="Animated illustration of a doctor, playing as you scroll"></canvas>
             </div>
+
+            <!-- Separate Last Container -->
+            <div class="last-container" id="about-medinexus">
+                <div class="last-banner" id="about">
+                    <p class="last-eyebrow">ABOUT MEDINEXUS</p>
+                    <h2 class="last-heading">Healthcare with Care and Connection</h2>
+                    <p class="last-subtext">We bring healthcare services, medical resources, and emergency coordination together through one connected platform.</p>
+                </div>
+
+                <div class="last-grid">
+                    <div class="last-card about">
+                        <h3>About</h3>
+                        <p>MediNexus Life Care Hospital Network provides 24/7 world-class emergency care, verified trauma response, and integrated digital patient systems.</p>
+                        <a href="#welcome" class="last-link">About Hospital &rarr;</a>
+                    </div>
+                    <div class="last-card services">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Blood Bank Management</li>
+                            <li>Organ Donation & Matching</li>
+                            <li>Vaccine Hub Logistics</li>
+                            <li>Rapid Medical Transport</li>
+                        </ul>
+                        <a href="#services" class="last-link">View Services &rarr;</a>
+                    </div>
+                    <div class="last-card doctors">
+                        <h3>Doctors</h3>
+                        <ul>
+                            <li>Cardiology (Dr. Carter)</li>
+                            <li>Internal Med (Dr. Rao)</li>
+                            <li>General Med (Dr. Mehta)</li>
+                            <li>Family Med (Dr. Brooks)</li>
+                        </ul>
+                        <a href="#doctors" class="last-link">Meet Doctors &rarr;</a>
+                    </div>
+                    <div class="last-card contact" id="contact">
+                        <h3>Contact</h3>
+                        <p><strong>Emergency:</strong> +91 8619216569</p>
+                        <p><strong>Operating Hours:</strong> 24/7 Active</p>
+                        <p><strong>Email:</strong> help@medinexus.org</p>
+                        <p><strong>Campus:</strong> Main Emergency Block</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </div>
     <script src="js/home.js" defer></script>
 </body>

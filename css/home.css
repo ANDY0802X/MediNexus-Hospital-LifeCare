@@ -542,7 +542,7 @@ html::-webkit-scrollbar-thumb {
     margin: 0 auto 30px auto;
     position: relative;
     z-index: 5;
-    background: #2b4039;
+    background:#1a5260;
     border-radius: 14px;
     padding: 36px 32px 24px;
     box-sizing: border-box;

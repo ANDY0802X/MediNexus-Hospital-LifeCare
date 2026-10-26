@@ -583,10 +583,10 @@ html::-webkit-scrollbar-thumb {
 /* Separate Last Container */
 .last-container {
     width: 95%;
-    margin: 0 auto 30px auto;
+    margin: 320vh auto 30px auto;
     position: relative;
     z-index: 5;
-    background:#1a5260;
+    background: #1a5260;
     border-radius: 14px;
     padding: 36px 32px 24px;
     box-sizing: border-box;
@@ -716,7 +716,7 @@ html::-webkit-scrollbar-thumb {
 
 @media (max-width: 767px) and (orientation: portrait) {
     .last-container {
-        margin: 0 auto 24px auto !important;
+        margin: 24px auto !important;
         width: calc(100% - 16px) !important;
         border-radius: 14px !important;
         padding: 24px 16px;

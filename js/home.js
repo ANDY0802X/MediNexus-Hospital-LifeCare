@@ -50,16 +50,16 @@
                 var target = null;
                 if (href === "#services" || text === "services" || text === "our services") target = document.querySelector(".services, #services");
                 else if (href === "#doctors" || text === "doctors") target = document.querySelector(".doctors, #doctors, .doctors-section");
-                else if (href === "#about-medinexus" || href === "#about" || text === "about") target = document.querySelector("#about-medinexus, #about, .last-container");
-                else if (href === "#welcome" || text === "about hospital" || text === "welcome") target = document.querySelector("#welcome, .about-section");
-                else if (href === "#contact" || text === "contact") target = document.querySelector("#contact, .last-card.contact, .last-container");
+                else if (href === "#welcome" || href === "#about" || text === "about" || text === "about hospital" || text === "welcome") target = document.querySelector("#welcome, .about-section");
+                else if (href === "#about-medinexus") target = document.querySelector("#about-medinexus, .last-container");
+                else if (href === "#contact" || text === "contact") target = document.querySelector("#contact, .last-container");
                 else if (href.startsWith("#") && href.length > 1) target = document.querySelector(href);
 
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: "smooth" });
                     if (history && history.pushState) history.pushState(null, "", href || ("#" + text));
-                } else if (href === "#welcome" || text === "about hospital") {
+                } else if (href === "#welcome" || href === "#about" || text === "about") {
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 }
@@ -266,17 +266,17 @@
         var isPortrait = window.matchMedia("(max-width: 767px) and (orientation: portrait)").matches;
         var isServices = name === "services" || name === "#services";
         var isDoctors = name === "doctors" || name === "#doctors";
-        var isAbout = name === "about" || name === "#about" || name === "about-medinexus" || name === "#about-medinexus";
+        var isAboutMedinexus = name === "about-medinexus" || name === "#about-medinexus";
         var isContact = name === "contact" || name === "#contact";
-        var isWelcome = name === "welcome" || name === "#welcome";
+        var isWelcome = name === "welcome" || name === "#welcome" || name === "about" || name === "#about";
 
         if (isPortrait) {
             var target = null;
             if (isServices) target = document.querySelector(".services, #services");
             else if (isDoctors) target = document.querySelector(".doctors, #doctors, .doctors-section");
-            else if (isAbout) target = document.querySelector("#about-medinexus, #about, .last-container");
             else if (isWelcome) target = document.querySelector("#welcome, .about-section");
-            else if (isContact) target = document.querySelector("#contact, .last-card.contact, .last-container");
+            else if (isAboutMedinexus) target = document.querySelector("#about-medinexus, .last-container");
+            else if (isContact) target = document.querySelector("#contact, .last-container");
 
             if (target) {
                 target.scrollIntoView({ behavior: "smooth" });
@@ -292,7 +292,9 @@
         var targetScrollTop = 0;
         var heroMax = heroScrollMax();
 
-        if (isServices) {
+        if (isWelcome) {
+            targetScrollTop = 0;
+        } else if (isServices) {
             var progressServices = MALE_REVEAL_FRAME / (FRAME_COUNT - 1);
             targetScrollTop = progressServices * heroMax;
         } else if (isDoctors) {
@@ -307,15 +309,13 @@
                 targetProgress = Math.min(1, Math.max(0, targetProgress));
                 targetScrollTop = targetProgress * heroMax;
             }
-        } else if (isAbout) {
+        } else if (isAboutMedinexus) {
             var lastEl = document.querySelector("#about-medinexus, .last-container");
             if (lastEl) {
                 targetScrollTop = Math.min(total, lastEl.offsetTop || total);
             } else {
                 targetScrollTop = total;
             }
-        } else if (isWelcome) {
-            targetScrollTop = 0;
         } else if (isContact) {
             targetScrollTop = total;
         }
@@ -338,8 +338,8 @@
 
                 if (href === "#services" || text === "services" || text === "our services") key = "services";
                 else if (href === "#doctors" || text === "doctors") key = "doctors";
-                else if (href === "#about-medinexus" || href === "#about" || text === "about") key = "about-medinexus";
-                else if (href === "#welcome" || text === "about hospital") key = "welcome";
+                else if (href === "#welcome" || href === "#about" || text === "about" || text === "about hospital" || text === "welcome") key = "welcome";
+                else if (href === "#about-medinexus") key = "about-medinexus";
                 else if (href === "#contact" || text === "contact") key = "contact";
                 else if (href.startsWith("#") && href.length > 1) key = href.slice(1);
 

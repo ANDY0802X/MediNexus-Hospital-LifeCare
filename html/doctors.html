@@ -3,42 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctors - MediNexus</title>
-    link rel="stylesheet" href="css/doctors.css">
+    <title>Our Doctors &amp; Specialists - MediNexus LifeCare</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/doctors.css">
 </head>
 <body>
-    <div class="doctors-header" >
-          <h1>Our Doctors</h1>      
-    </div>
-    <div  class="doctors-info">
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Doctor Name</th>
-                    <th scope="col">Specialist</th>
-                    <th scope="col">Typical Degree / Qualification</th>
-                    <th scope="col">Gender</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Dr. Aarav Sharma</td><td>Cardiologist</td><td>MD / DM (Cardiology), FACC</td><td>Male</td></tr>
-                <tr><td>Dr. Ananya Rao</td><td>Neurologist</td><td>MD / DM (Neurology)</td><td>Female</td></tr>
-                <tr><td>Dr. Rohan Mehta</td><td>Orthopedic Surgeon</td><td>MS / M.Ch (Orthopedics)</td><td>Male</td></tr>
-                <tr><td>Dr. Priya Nair</td><td>Dermatologist</td><td>MD / DNB (Dermatology)</td><td>Female</td></tr>
-                <tr><td>Dr. Arjun Patel</td><td>Pediatrician</td><td>MD / DCH (Pediatrics)</td><td>Male</td></tr>
-                <tr><td>Dr. Meera Iyer</td><td>Gastroenterologist</td><td>MD / DM (Gastroenterology)</td><td>Female</td></tr>
-                <tr><td>Dr. Vikram Singh</td><td>Oncologist</td><td>MD / DM (Medical / Surgical Oncology)</td><td>Male</td></tr>
-                <tr><td>Dr. Kavya Menon</td><td>Endocrinologist</td><td>MD / DM (Endocrinology)</td><td>Female</td></tr>
-                <tr><td>Dr. Karan Desai</td><td>Pulmonologist</td><td>MD / DM (Pulmonology / Chest Medicine)</td><td>Male</td></tr>
-                <tr><td>Dr. Sneha Kapoor</td><td>Nephrologist</td><td>MD / DM (Nephrology)</td><td>Female</td></tr>
-                <tr><td>Dr. Aditya Verma</td><td>Ophthalmologist</td><td>MS / DO (Ophthalmology)</td><td>Male</td></tr>
-                <tr><td>Dr. Nisha Kulkarni</td><td>Psychiatrist</td><td>MD (Psychiatry)</td><td>Female</td></tr>
-                <tr><td>Dr. Pooja Reddy</td><td>Obstetrician &amp; Gynecologist</td><td>MS / MD (OB-GYN)</td><td>Female</td></tr>
-                <tr><td>Dr. Sameer Joshi</td><td>Rheumatologist</td><td>MD / DM (Rheumatology)</td><td>Male</td></tr>
-                <tr><td>Dr. Rahul Chawla</td><td>Urologist</td><td>MS / M.Ch (Urology)</td><td>Male</td></tr>
-            </tbody>
-        </table>
-    </div>
-    
+
+    <!-- Top Brand Bar -->
+    <header class="top-nav">
+        <div class="brand-wrapper">
+            <div class="brand-logo-frame">
+                <img src="../assets/img/doc_half.png" alt="MediNexus Doctor Avatar">
+            </div>
+            <div class="brand-text-block">
+                <span class="brand-title">MediNexus</span>
+                <span class="brand-subtitle">LifeCare Medical Network</span>
+            </div>
+        </div>
+        <a href="../index.html" class="nav-back-link">
+            <span>&larr;</span> Return to Home
+        </a>
+    </header>
+
+    <main class="page-wrapper">
+        <!-- Hero Header -->
+        <div class="doctors-header">
+            <div class="header-badge">Clinical Directory</div>
+            <h1>Our Medical Specialists</h1>
+            <p class="header-description">
+                Meet our multidisciplinary team of board-certified consultants, surgeons, and clinicians dedicated to comprehensive patient care, 24/7 emergency response, and clinical excellence.
+            </p>
+        </div>
+
+        <!-- Directory Filter & Search Toolbar -->
+        <div class="directory-toolbar">
+            <div class="search-container">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="doctorSearch" class="search-input" placeholder="Search by doctor name, specialty, or qualification..." autocomplete="off">
+            </div>
+            <div class="filter-pills" id="filterPills">
+                <button type="button" class="filter-btn active" data-filter="all">All Specialties</button>
+                <button type="button" class="filter-btn" data-filter="cardiology">Cardiology</button>
+                <button type="button" class="filter-btn" data-filter="neurology">Neurology</button>
+                <button type="button" class="filter-btn" data-filter="surgery">Surgery</button>
+                <button type="button" class="filter-btn" data-filter="pediatrics">Pediatrics</button>
+                <button type="button" class="filter-btn" data-filter="oncology">Oncology</button>
+            </div>
+            <div class="doctors-count" id="doctorsCount">15 Specialists</div>
+        </div>
+
+        <!-- Doctors Table Section -->
+        <div class="doctors-info">
+            <div class="table-responsive">
+                <table id="doctorsTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Doctor Name</th>
+                            <th scope="col">Specialist</th>
+                            <th scope="col">Typical Degree / Qualification</th>
+                            <th scope="col">Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">AS</div>
+                                    <span class="doctor-name-text">Dr. Aarav Sharma</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Cardiologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Cardiology), FACC</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">AR</div>
+                                    <span class="doctor-name-text">Dr. Ananya Rao</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Neurologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Neurology)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">RM</div>
+                                    <span class="doctor-name-text">Dr. Rohan Mehta</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Orthopedic Surgeon</span></td>
+                            <td><span class="degree-badge">MS / M.Ch (Orthopedics)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">PN</div>
+                                    <span class="doctor-name-text">Dr. Priya Nair</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Dermatologist</span></td>
+                            <td><span class="degree-badge">MD / DNB (Dermatology)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">AP</div>
+                                    <span class="doctor-name-text">Dr. Arjun Patel</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Pediatrician</span></td>
+                            <td><span class="degree-badge">MD / DCH (Pediatrics)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">MI</div>
+                                    <span class="doctor-name-text">Dr. Meera Iyer</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Gastroenterologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Gastroenterology)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">VS</div>
+                                    <span class="doctor-name-text">Dr. Vikram Singh</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Oncologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Medical / Surgical Oncology)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">KM</div>
+                                    <span class="doctor-name-text">Dr. Kavya Menon</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Endocrinologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Endocrinology)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">KD</div>
+                                    <span class="doctor-name-text">Dr. Karan Desai</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Pulmonologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Pulmonology / Chest Medicine)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">SK</div>
+                                    <span class="doctor-name-text">Dr. Sneha Kapoor</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Nephrologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Nephrology)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">AV</div>
+                                    <span class="doctor-name-text">Dr. Aditya Verma</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Ophthalmologist</span></td>
+                            <td><span class="degree-badge">MS / DO (Ophthalmology)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">NK</div>
+                                    <span class="doctor-name-text">Dr. Nisha Kulkarni</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Psychiatrist</span></td>
+                            <td><span class="degree-badge">MD (Psychiatry)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">PR</div>
+                                    <span class="doctor-name-text">Dr. Pooja Reddy</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Obstetrician &amp; Gynecologist</span></td>
+                            <td><span class="degree-badge">MS / MD (OB-GYN)</span></td>
+                            <td><span class="gender-badge female">&#9792; Female</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">SJ</div>
+                                    <span class="doctor-name-text">Dr. Sameer Joshi</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Rheumatologist</span></td>
+                            <td><span class="degree-badge">MD / DM (Rheumatology)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="doctor-name-cell">
+                                    <div class="doctor-avatar-badge">RC</div>
+                                    <span class="doctor-name-text">Dr. Rahul Chawla</span>
+                                </div>
+                            </td>
+                            <td><span class="specialty-badge">Urologist</span></td>
+                            <td><span class="degree-badge">MS / M.Ch (Urology)</span></td>
+                            <td><span class="gender-badge male">&#9794; Male</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="no-results" id="noResults">
+                <h3>No specialists found</h3>
+                <p>Try searching with another keyword or resetting the specialty filter.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p>MediNexus LifeCare Hospital Network &bull; 24/7 Clinical Excellence</p>
+        <p class="footer-hotline">Emergency Hotline: +91 8619216569 &bull; help@medinexus.org</p>
+    </footer>
+
+    <!-- Interactive Search & Filter Script -->
+    <script>
+        (function() {
+            var searchInput = document.getElementById('doctorSearch');
+            var filterButtons = document.querySelectorAll('.filter-btn');
+            var tableRows = document.querySelectorAll('#doctorsTable tbody tr');
+            var countBadge = document.getElementById('doctorsCount');
+            var noResults = document.getElementById('noResults');
+
+            var currentFilter = 'all';
+
+            function filterRows() {
+                var query = searchInput.value.toLowerCase().trim();
+                var visibleCount = 0;
+
+                tableRows.forEach(function(row) {
+                    var text = row.textContent.toLowerCase();
+                    var specialty = (row.querySelector('.specialty-badge') ? row.querySelector('.specialty-badge').textContent : '').toLowerCase();
+
+                    var matchesQuery = !query || text.indexOf(query) !== -1;
+                    var matchesFilter = currentFilter === 'all';
+
+                    if (!matchesFilter) {
+                        if (currentFilter === 'cardiology' && specialty.indexOf('cardio') !== -1) matchesFilter = true;
+                        else if (currentFilter === 'neurology' && specialty.indexOf('neuro') !== -1) matchesFilter = true;
+                        else if (currentFilter === 'surgery' && specialty.indexOf('surgeon') !== -1) matchesFilter = true;
+                        else if (currentFilter === 'pediatrics' && specialty.indexOf('pediat') !== -1) matchesFilter = true;
+                        else if (currentFilter === 'oncology' && specialty.indexOf('oncol') !== -1) matchesFilter = true;
+                    }
+
+                    if (matchesQuery && matchesFilter) {
+                        row.style.display = '';
+                        visibleCount++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                countBadge.textContent = visibleCount + ' Specialist' + (visibleCount === 1 ? '' : 's');
+                if (noResults) {
+                    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+                }
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterRows);
+            }
+
+            filterButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    currentFilter = btn.getAttribute('data-filter') || 'all';
+                    filterRows();
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

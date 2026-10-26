@@ -3,98 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaccine-Medinexus</title>
-    <link rel="stylesheet" href="css/vaccine.css">
+    <title>Vaccine Hub &amp; Immunization Directory - MediNexus LifeCare</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/vaccine.css">
 </head>
 <body>
-    <div class="vaccine-header" >
-          <h1>Vaccine</h1>    
-          <div class="vaccine-info">
-            <table class="vac-T1">
-                <thead>
-                    <tr>
-                        <th scope="col">Routine and Child Vaccines</th>
-                    </tr>
 
-                </thead>
-                <tbody>
-                    <tr><td>BCG (Bacillus Calmette–Guérin)</td></tr>
-                    <tr><td>Hepatitis B</td></tr>
-                    <tr><td>DTaP (Diphtheria, Tetanus, Acellular Pertussis)</td></tr>
-                    <tr><td>DT (Diphtheria and Tetanus)</td></tr>
-                    <tr><td>Tdap (Tetanus, Diphtheria, Acellular Pertussis - adult booster)</td></tr>
-                    <tr><td>Td (Tetanus and Diphtheria)</td></tr>
-                    <tr><td>OPV (Oral Polio Vaccine)</td></tr>
-                    <tr><td>IPV (Inactivated Polio Vaccine)</td></tr>
-                    <tr><td>Hib (Haemophilus influenzae type b)</td></tr>
-                    <tr><td>PCV13 / PCV15 / PCV20 (Pneumococcal Conjugate)</td></tr>
-                    <tr><td>Rotavirus</td></tr>
-                    <tr><td>MMR (Measles, Mumps, Rubella)</td></tr>
-                    <tr><td>MMRV (Measles, Mumps, Rubella, Varicella)</td></tr>
-                    <tr><td>Varicella (Chickenpox)</td></tr>
-                    <tr><td>Hepatitis A</td></tr>
-                    <tr><td>HPV (Human Papillomavirus - Gardasil)</td></tr>
-                
-                </tbody>
-            </table>
-            <table class="vac-T2"> 
-                <thead>
-                    <tr>
-                        <th scope="col">Viral Disease Vaccines</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Influenza (Annual Flu Shot)</td></tr>
-                    <tr><td>COVID-19 (mRNA &amp; Viral Vector)</td></tr>
-                    <tr><td>Rabies</td></tr>
-                    <tr><td>Shingrix (Herpes Zoster / Shingles)</td></tr>
-                    <tr><td>Yellow Fever</td></tr>
-                    <tr><td>Japanese Encephalitis</td></tr>
-                    <tr><td>Dengue (Dengvaxia, Qdenga)</td></tr>
-                    <tr><td>Ebola (Ervebo)</td></tr>
-                    <tr><td>Mpox / Smallpox (JYNNEOS, ACAM2000)</td></tr>
-                    <tr><td>Tick-Borne Encephalitis (TBE)</td></tr>
-                    <tr><td>Mumps (Monovalent)</td></tr>
-                    <tr><td>Rubella (Monovalent)</td></tr>
-                    <tr><td>Measles (Monovalent)</td></tr>
-                </tbody>
-            </table>
-            <table class="vac-T3">
-                <thead>
-                    <tr>
-                        <th scope="col">Bacterial Disease Vaccines</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>PPSV23 (Pneumococcal Polysaccharide)</td></tr>
-                    <tr><td>Meningococcal ACWY (MenACWY)</td></tr>
-                    <tr><td>Meningococcal B (MenB)</td></tr>
-                    <tr><td>Typhoid Conjugate Vaccine (TCV)</td></tr>
-                    <tr><td>Typhoid Vi Polysaccharide</td></tr>
-                    <tr><td>Ty21a (Oral Typhoid)</td></tr>
-                    <tr><td>Cholera (Dukoral, ShanChol, Vaxchora)</td></tr>
-                    <tr><td>Anthrax (BIOTHRAX)</td></tr>
-                </tbody>
-            </table>
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <div class="brand-wrapper">
+            <div class="brand-logo-frame">
+                <img src="../assets/img/doc_half.png" alt="MediNexus Doctor Avatar">
+            </div>
+            <div class="brand-text-block">
+                <span class="brand-title">MediNexus</span>
+                <span class="brand-subtitle">LifeCare Medical Network</span>
+            </div>
+        </div>
+        <a href="../index.html" class="nav-back-link">
+            <span>&larr;</span> Return to Home
+        </a>
+    </header>
 
-            <table class="vac-T4">
-                <thead>
-                    <tr>
-                        <th scope="col">Combination Vaccines</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Pentavalent (DTwP-HepB-Hib)</td></tr>
-                    <tr><td>Hexavalent (DTaP-IPV-HepB-Hib)</td></tr>
-                    <tr><td>Twinrix (Hepatitis A + Hepatitis B)</td></tr>
-                    <tr><td>ProQuad (MMRV)</td></tr>
-                    <tr><td>Kinrix / Quadracel (DTaP-IPV)</td></tr>
-                </tbody>
-            </table>
+    <main class="page-wrapper">
+        <!-- Hero Header -->
+        <div class="vaccine-header">
+            <div class="header-badge">Immunization Logistics</div>
+            <h1>Vaccine Hub &amp; Formulary</h1>
+            <p class="header-description">
+                Official clinical formulary and directory of routine pediatric, viral, bacterial, and multi-antigen combination vaccines administered across all MediNexus immunization centers and cold-chain hubs.
+            </p>
+        </div>
 
-                
-            </div>  
-    </div>
-   
+        <!-- Category Stat Summary Cards -->
+        <div class="stat-cards-grid">
+            <div class="stat-card routine">
+                <div class="stat-icon-frame">&#128118;</div>
+                <div class="stat-info">
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">Routine &amp; Child</span>
+                </div>
+            </div>
+            <div class="stat-card viral">
+                <div class="stat-icon-frame">&#129440;</div>
+                <div class="stat-info">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Viral Diseases</span>
+                </div>
+            </div>
+            <div class="stat-card bacterial">
+                <div class="stat-icon-frame">&#129656;</div>
+                <div class="stat-info">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Bacterial Diseases</span>
+                </div>
+            </div>
+            <div class="stat-card combo">
+                <div class="stat-icon-frame">&#128300;</div>
+                <div class="stat-info">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Combination Formulas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search & Cold-Chain Toolbar -->
+        <div class="search-toolbar">
+            <div class="search-input-wrapper">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="vaccineSearch" class="search-input" placeholder="Search vaccine by name, antigen, or abbreviation..." autocomplete="off">
+            </div>
+            <div class="cold-chain-badge">
+                <span>&#10052;</span> Certified Cold-Chain Storage (2&deg;C &ndash; 8&deg;C)
+            </div>
+        </div>
+
+        <!-- Vaccine Category Cards Grid -->
+        <div class="vaccine-info">
+            <!-- Table 1: Routine & Child Vaccines -->
+            <div class="vaccine-card card-routine" id="cardRoutine">
+                <div class="card-header-bar">
+                    <div class="card-title-group">
+                        <span class="card-title-icon">&#128118;</span>
+                        <h2 class="card-title-text">Routine &amp; Child Vaccines</h2>
+                    </div>
+                    <span class="card-count-pill" id="countRoutine">16 Vaccines</span>
+                </div>
+                <table class="vac-T1">
+                    <thead>
+                        <tr>
+                            <th scope="col">Routine and Child Vaccines</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>BCG (Bacillus Calmette–Guérin)</td></tr>
+                        <tr><td>Hepatitis B</td></tr>
+                        <tr><td>DTaP (Diphtheria, Tetanus, Acellular Pertussis)</td></tr>
+                        <tr><td>DT (Diphtheria and Tetanus)</td></tr>
+                        <tr><td>Tdap (Tetanus, Diphtheria, Acellular Pertussis - adult booster)</td></tr>
+                        <tr><td>Td (Tetanus and Diphtheria)</td></tr>
+                        <tr><td>OPV (Oral Polio Vaccine)</td></tr>
+                        <tr><td>IPV (Inactivated Polio Vaccine)</td></tr>
+                        <tr><td>Hib (Haemophilus influenzae type b)</td></tr>
+                        <tr><td>PCV13 / PCV15 / PCV20 (Pneumococcal Conjugate)</td></tr>
+                        <tr><td>Rotavirus</td></tr>
+                        <tr><td>MMR (Measles, Mumps, Rubella)</td></tr>
+                        <tr><td>MMRV (Measles, Mumps, Rubella, Varicella)</td></tr>
+                        <tr><td>Varicella (Chickenpox)</td></tr>
+                        <tr><td>Hepatitis A</td></tr>
+                        <tr><td>HPV (Human Papillomavirus - Gardasil)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 2: Viral Disease Vaccines -->
+            <div class="vaccine-card card-viral" id="cardViral">
+                <div class="card-header-bar">
+                    <div class="card-title-group">
+                        <span class="card-title-icon">&#129440;</span>
+                        <h2 class="card-title-text">Viral Disease Vaccines</h2>
+                    </div>
+                    <span class="card-count-pill" id="countViral">13 Vaccines</span>
+                </div>
+                <table class="vac-T2">
+                    <thead>
+                        <tr>
+                            <th scope="col">Viral Disease Vaccines</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Influenza (Annual Flu Shot)</td></tr>
+                        <tr><td>COVID-19 (mRNA &amp; Viral Vector)</td></tr>
+                        <tr><td>Rabies</td></tr>
+                        <tr><td>Shingrix (Herpes Zoster / Shingles)</td></tr>
+                        <tr><td>Yellow Fever</td></tr>
+                        <tr><td>Japanese Encephalitis</td></tr>
+                        <tr><td>Dengue (Dengvaxia, Qdenga)</td></tr>
+                        <tr><td>Ebola (Ervebo)</td></tr>
+                        <tr><td>Mpox / Smallpox (JYNNEOS, ACAM2000)</td></tr>
+                        <tr><td>Tick-Borne Encephalitis (TBE)</td></tr>
+                        <tr><td>Mumps (Monovalent)</td></tr>
+                        <tr><td>Rubella (Monovalent)</td></tr>
+                        <tr><td>Measles (Monovalent)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 3: Bacterial Disease Vaccines -->
+            <div class="vaccine-card card-bacterial" id="cardBacterial">
+                <div class="card-header-bar">
+                    <div class="card-title-group">
+                        <span class="card-title-icon">&#129656;</span>
+                        <h2 class="card-title-text">Bacterial Disease Vaccines</h2>
+                    </div>
+                    <span class="card-count-pill" id="countBacterial">8 Vaccines</span>
+                </div>
+                <table class="vac-T3">
+                    <thead>
+                        <tr>
+                            <th scope="col">Bacterial Disease Vaccines</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>PPSV23 (Pneumococcal Polysaccharide)</td></tr>
+                        <tr><td>Meningococcal ACWY (MenACWY)</td></tr>
+                        <tr><td>Meningococcal B (MenB)</td></tr>
+                        <tr><td>Typhoid Conjugate Vaccine (TCV)</td></tr>
+                        <tr><td>Typhoid Vi Polysaccharide</td></tr>
+                        <tr><td>Ty21a (Oral Typhoid)</td></tr>
+                        <tr><td>Cholera (Dukoral, ShanChol, Vaxchora)</td></tr>
+                        <tr><td>Anthrax (BIOTHRAX)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table 4: Combination Vaccines -->
+            <div class="vaccine-card card-combo" id="cardCombo">
+                <div class="card-header-bar">
+                    <div class="card-title-group">
+                        <span class="card-title-icon">&#128300;</span>
+                        <h2 class="card-title-text">Combination Vaccines</h2>
+                    </div>
+                    <span class="card-count-pill" id="countCombo">5 Vaccines</span>
+                </div>
+                <table class="vac-T4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Combination Vaccines</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Pentavalent (DTwP-HepB-Hib)</td></tr>
+                        <tr><td>Hexavalent (DTaP-IPV-HepB-Hib)</td></tr>
+                        <tr><td>Twinrix (Hepatitis A + Hepatitis B)</td></tr>
+                        <tr><td>ProQuad (MMRV)</td></tr>
+                        <tr><td>Kinrix / Quadracel (DTaP-IPV)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State for Search -->
+            <div class="search-empty-state" id="emptyState">
+                <h3>No vaccines matching your search</h3>
+                <p>Try searching for common names like "Flu", "Polio", "MMR", or "Tetanus".</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p>MediNexus LifeCare Immunization Network &bull; WHO &amp; National Immunization Standards Compliant</p>
+        <p class="footer-hotline">Vaccine Logistics Support: +91 8619216569 &bull; vaccinehub@medinexus.org</p>
+    </footer>
+
+    <!-- Interactive Live Search Filter Script -->
+    <script>
+        (function() {
+            var searchInput = document.getElementById('vaccineSearch');
+            var cards = [
+                { card: document.getElementById('cardRoutine'), countEl: document.getElementById('countRoutine'), rows: document.querySelectorAll('.vac-T1 tbody tr'), total: 16 },
+                { card: document.getElementById('cardViral'), countEl: document.getElementById('countViral'), rows: document.querySelectorAll('.vac-T2 tbody tr'), total: 13 },
+                { card: document.getElementById('cardBacterial'), countEl: document.getElementById('countBacterial'), rows: document.querySelectorAll('.vac-T3 tbody tr'), total: 8 },
+                { card: document.getElementById('cardCombo'), countEl: document.getElementById('countCombo'), rows: document.querySelectorAll('.vac-T4 tbody tr'), total: 5 }
+            ];
+            var emptyState = document.getElementById('emptyState');
+
+            function filterVaccines() {
+                var query = (searchInput.value || '').toLowerCase().trim();
+                var overallVisible = 0;
+
+                cards.forEach(function(item) {
+                    var visibleInCard = 0;
+                    item.rows.forEach(function(row) {
+                        var text = row.textContent.toLowerCase();
+                        if (!query || text.indexOf(query) !== -1) {
+                            row.style.display = '';
+                            visibleInCard++;
+                            overallVisible++;
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+
+                    if (item.countEl) {
+                        item.countEl.textContent = query ? (visibleInCard + ' Match' + (visibleInCard === 1 ? '' : 'es')) : (item.total + ' Vaccines');
+                    }
+
+                    if (item.card) {
+                        item.card.style.display = visibleInCard === 0 && query ? 'none' : '';
+                    }
+                });
+
+                if (emptyState) {
+                    emptyState.style.display = overallVisible === 0 ? 'block' : 'none';
+                }
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterVaccines);
+            }
+        })();
+    </script>
 </body>
 </html>

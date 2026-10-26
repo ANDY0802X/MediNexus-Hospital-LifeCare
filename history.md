@@ -99,3 +99,58 @@ This file tracks all historical commits, user requests, AI actions, and rollback
   - Verified local server asset delivery (all 40 frames and module images loaded with HTTP 200).
 - **Outcome**: Local `main` is cleanly synchronized with remote `origin/main` with all conflicts resolved and working tree clean.
 
+---
+
+### Session Log Entry 08: Scroll Engine Diagnosis, DOM Hierarchy Repair & Navigation Ordering
+- **Timestamp**: `2026-10-24 11:32:00 IST`
+- **User Prompt**:
+  > *"what is the problem with te code , adjust the code , style it correctly , review the scrool its not working , also make it correctly ordered"*
+- **Root Causes Diagnosed**:
+  1. **DOM Nesting & Structural Fracture**: Commit `2df6620` had mistakenly nested `.last-container` (the footer) inside `#heroPin` (the sticky 80vh hero viewport) and left stray closing tags, trapping the footer inside the pinned container.
+  2. **Collapsing Scroll Travel Track**: `.last-container` margin was set to 0 and `.scroll-stage::after` was 30px, eliminating the ~3000px scrollable travel track. As a result, `#scrollStage.scrollHeight` equaled `clientHeight`, locking scrolling entirely and preventing the 40-frame doctor canvas from playing.
+  3. **Inverted Navigation Mapping**: In `initNavLinks()`, matching `text === "about"` triggered `about-medinexus` before checking `href === "#welcome"`, causing the header "About" link to scroll all the way to the bottom footer instead of top-level hospital information.
+- **Actions Taken**:
+  - **Repaired DOM Nesting in `index.html`**: Closed `#heroPin` cleanly before `.last-container`, removed orphaned closing `</div>` tags, corrected title to "MediNexus Hospital & LifeCare", and fixed typographical/obsolete markup (`<center>` -> CSS center alignment; "MediNexushospital" -> "MediNexus Hospital").
+  - **Restored Desktop Scroll Travel in `css/home.css`**: Configured `.last-container` with `margin: 320vh auto 30px auto;` on desktop and clean `24px auto !important;` on mobile portrait viewports to provide proper sticky travel for all 40 canvas frames.
+  - **Reordered & Re-anchored Navigation in `js/home.js`**: Re-routed "About" to `#welcome` (`scrollTop = 0`), "Services" to `#services` (`scrollTop ≈ 722px`), "Doctors" to `#doctors` (`scrollTop ≈ 1411px`), and "Contact" to the footer (`scrollTop ≈ 2440px`).
+  - **Automated Verification**: Validated interactive scroll mechanics and navigation smooth-scroll offsets via browser subagent.
+- **Outcome**: Scroll engine fully functional across all viewports; 40 animation frames render sequentially; male and female physicians align seamlessly at frame 15; and navigation links smoothly glide to their correct chronological sections.
+
+---
+
+### Session Log Entry 09: Standalone Styling of Doctors & Vaccine Directory Pages
+- **Timestamp**: `2026-10-24 11:42:00 IST`
+- **User Prompt**:
+  > *"umm ok now stly the pages of doctors and vaccine , do not connect those to the index page just style the correctly"*
+- **Actions Taken**:
+  - **Preserved Architecture Invariance**: Maintained [index.html](file:///d:/CODING/web%20dev/labs_DBMS/Project_claude/index.html) completely disconnected and unmodified, respecting user instructions.
+  - **Styled [doctors.html](file:///d:/CODING/web%20dev/labs_DBMS/Project_claude/html/doctors.html) & Created [doctors.css](file:///d:/CODING/web%20dev/labs_DBMS/Project_claude/html/doctors.css)**:
+    - Fixed broken CSS link syntax (`<link rel="stylesheet" href="doctors.css">`).
+    - Added MediNexus brand top bar with doctor avatar and return navigation.
+    - Designed deep-teal hero header ("Our Medical Specialists") and interactive toolbar with real-time text search and specialty filter pills (Cardiology, Neurology, Surgery, Pediatrics, Oncology).
+    - Preserved all 15 doctor entries with modern claymorphic styling: avatar initials badges, specialty pills, qualification tags, and gender chips.
+  - **Styled [vaccine.html](file:///d:/CODING/web%20dev/labs_DBMS/Project_claude/html/vaccine.html) & Created [vaccine.css](file:///d:/CODING/web%20dev/labs_DBMS/Project_claude/html/vaccine.css)**:
+    - Fixed CSS link to `vaccine.css`.
+    - Added MediNexus brand top bar and cold-chain logistics hero header.
+    - Added 4 category summary stat cards (Routine & Child: 16, Viral: 13, Bacterial: 8, Combo: 5).
+    - Arranged all 4 tables (`.vac-T1` through `.vac-T4`) into responsive category cards with distinct color-accented headers, live match counters, and syringe bullet icons.
+    - Integrated real-time client-side search across all 42 vaccine formulary items.
+  - **Visual Verification**: Tested both pages via browser subagent across desktop and mobile viewports, verifying visual appeal, instant filtering, and responsive behavior.
+- **Outcome**: Both pages styled with modern, high-contrast, claymorphic clinical designs matching the MediNexus theme while remaining independent from the main index page.
+
+---
+
+### Session Log Entry 10: Relocate CSS Files to Centralized `css/` Directory & Repository Push
+- **Timestamp**: `2026-10-26 23:40:00 IST`
+- **User Prompt**:
+  > *"i havemoved doctors.css and vaccine.css into css file connect it and then upload it !"*
+- **Actions Taken**:
+  - **Relocated CSS Verification**: Confirmed `doctors.css` and `vaccine.css` moved into the root `css/` directory.
+  - **Updated Stylesheet Links**:
+    - Connected `html/doctors.html` to `../css/doctors.css`.
+    - Connected `html/vaccine.html` to `../css/vaccine.css`.
+    - Connected `html/sign_up.html` to `../css/style.css` and `../css/login.css`.
+  - **Header Comment Refactoring**: Updated comments in `css/doctors.css` and `css/vaccine.css` to reflect `File: css/*.css`.
+  - **Asset & Network Validation**: Verified that `html/doctors.html`, `html/vaccine.html`, and their stylesheets return HTTP 200 without broken references.
+  - **Version Control & Remote Synchronization**: Staged changes, committed, and pushed all commits to remote `origin/main`.
+- **Outcome**: Centralized stylesheet structure successfully established and repository pushed to GitHub.

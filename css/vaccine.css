@@ -1,0 +1,552 @@
+/* ==========================================================================
+   MediNexus Hospital & LifeCare - Vaccine Hub & Immunization Directory
+   File: css/vaccine.css
+   ========================================================================== */
+
+:root {
+    --primary: #174b57;
+    --primary-dark: #0f343d;
+    --primary-light: #24636a;
+    --accent: #35d4e6;
+    --teal-glow: #94d0c3;
+    --bg-page: #edf6f4;
+    --bg-card: #ffffff;
+    --bg-subtle: #f4faf8;
+    --border-color: #d6e6e3;
+    --border-subtle: rgba(23, 75, 87, 0.12);
+    --text-primary: #183b43;
+    --text-secondary: #52606d;
+    --text-muted: #788998;
+    --shadow-clay: 0 10px 28px rgba(24, 59, 67, 0.08);
+    --shadow-hover: 0 16px 36px rgba(24, 59, 67, 0.14);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --radius-pill: 999px;
+    --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Category accents */
+    --cat-routine: #0284c7;
+    --cat-routine-bg: #e0f2fe;
+    --cat-viral: #ea580c;
+    --cat-viral-bg: #ffedd5;
+    --cat-bacterial: #059669;
+    --cat-bacterial-bg: #d1fae5;
+    --cat-combo: #7c3aed;
+    --cat-combo-bg: #ede9fe;
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #dcebea;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 6px;
+    border: 2px solid #dcebea;
+}
+
+/* Top Brand Navigation Bar */
+.top-nav {
+    width: 95%;
+    max-width: 1320px;
+    margin: 16px auto 0;
+    background: var(--primary);
+    border: 1px solid #286674;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px rgba(24, 59, 67, 0.16);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-logo-frame {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f8c7ad;
+    border: 2.5px solid rgba(255, 255, 255, 0.85);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.brand-logo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-text-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+}
+
+.brand-subtitle {
+    font-size: 0.72rem;
+    color: var(--teal-glow);
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.nav-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-back-link:hover {
+    background: rgba(255, 255, 255, 0.24);
+    transform: translateX(-3px);
+}
+
+/* Page Layout */
+.page-wrapper {
+    width: 95%;
+    max-width: 1320px;
+    margin: 20px auto 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Hero Header Banner */
+.vaccine-header {
+    background: linear-gradient(135deg, #174b57 0%, #1f5a6d 60%, #177185 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(148, 208, 195, 0.25);
+    box-shadow: var(--shadow-clay);
+    padding: 36px 36px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.vaccine-header::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(53, 212, 230, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(148, 208, 195, 0.18);
+    border: 1px solid rgba(148, 208, 195, 0.35);
+    color: var(--teal-glow);
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+}
+
+.header-badge::before {
+    content: "●";
+    color: #4ade80;
+    font-size: 0.85rem;
+}
+
+.vaccine-header h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.header-description {
+    font-size: 1rem;
+    color: #d2ede7;
+    max-width: 760px;
+    line-height: 1.6;
+}
+
+/* Category Quick Stat Badges */
+.stat-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-clay);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-icon-frame {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.stat-card.routine .stat-icon-frame {
+    background: var(--cat-routine-bg);
+    color: var(--cat-routine);
+}
+
+.stat-card.viral .stat-icon-frame {
+    background: var(--cat-viral-bg);
+    color: var(--cat-viral);
+}
+
+.stat-card.bacterial .stat-icon-frame {
+    background: var(--cat-bacterial-bg);
+    color: var(--cat-bacterial);
+}
+
+.stat-card.combo .stat-icon-frame {
+    background: var(--cat-combo-bg);
+    color: var(--cat-combo);
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Search Toolbar */
+.search-toolbar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-clay);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1 1 320px;
+    max-width: 480px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 16px 10px 40px;
+    font-size: 0.92rem;
+    font-family: inherit;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-subtle);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-input:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(23, 75, 87, 0.12);
+}
+
+.cold-chain-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e8f7fa;
+    border: 1px solid #c2ebf2;
+    color: #126372;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Vaccine Grid Info Container */
+.vaccine-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+/* Category Table Card */
+.vaccine-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-clay);
+    overflow: hidden;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.vaccine-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Top Accent Stripe on Cards */
+.vaccine-card.card-routine { border-top: 5px solid var(--cat-routine); }
+.vaccine-card.card-viral { border-top: 5px solid var(--cat-viral); }
+.vaccine-card.card-bacterial { border-top: 5px solid var(--cat-bacterial); }
+.vaccine-card.card-combo { border-top: 5px solid var(--cat-combo); }
+
+/* Card Table Header */
+.card-header-bar {
+    padding: 18px 24px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title-icon {
+    font-size: 1.25rem;
+}
+
+.card-title-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.card-count-pill {
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+}
+
+.card-routine .card-count-pill {
+    background: var(--cat-routine-bg);
+    color: var(--cat-routine);
+}
+
+.card-viral .card-count-pill {
+    background: var(--cat-viral-bg);
+    color: var(--cat-viral);
+}
+
+.card-bacterial .card-count-pill {
+    background: var(--cat-bacterial-bg);
+    color: var(--cat-bacterial);
+}
+
+.card-combo .card-count-pill {
+    background: var(--cat-combo-bg);
+    color: var(--cat-combo);
+}
+
+/* Table Elements */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    display: none; /* Accessible visually hidden because card-header-bar displays the section title */
+}
+
+tbody tr {
+    border-bottom: 1px solid #f0f6f4;
+    transition: background-color var(--transition-fast), padding-left var(--transition-fast);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f5fbf9;
+}
+
+td {
+    padding: 13px 24px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+td::before {
+    content: "💉";
+    font-size: 0.85rem;
+    opacity: 0.75;
+    flex-shrink: 0;
+}
+
+/* Empty Search Results Message */
+.search-empty-state {
+    display: none;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+}
+
+.search-empty-state h3 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+/* Page Footer */
+.page-footer {
+    width: 95%;
+    max-width: 1320px;
+    margin: 10px auto 40px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-hotline {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+    .vaccine-info {
+        grid-template-columns: 1fr;
+    }
+    .stat-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .vaccine-header {
+        padding: 26px 20px;
+    }
+    .stat-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .top-nav {
+        padding: 10px 16px;
+    }
+    .brand-title {
+        font-size: 1.15rem;
+    }
+    .nav-back-link {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+    }
+    td {
+        padding: 11px 18px;
+        font-size: 0.86rem;
+    }
+}

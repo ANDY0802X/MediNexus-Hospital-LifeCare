@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Registration - MediNexus Hospital</title>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>MediNexus Hospital &bull; Vaccine Registration Portal</h1>
+            <p>Official Patient Immunization Intake &amp; Slot Booking Form</p>
+            <nav>
+                <a href="../index.html">Return to Home</a> |
+                <a href="vaccine_hub.html">Vaccine Hub</a> |
+                <a href="vaccine.html">View Vaccine Formulary</a>
+            </nav>
+        </div>
+    </header>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>Patient Vaccine Registration</h2>
+            <p>
+                Please complete all required fields below. Accurate personal and clinical screening details ensure safe vaccine administration in accordance with national immunization standards.
+            </p>
+
+            <form action="#" method="POST">
+
+                <!-- 1. PATIENT / BENEFICIARY INFORMATION -->
+                <fieldset>
+                    <legend><strong>1. Beneficiary Information</strong></legend>
+
+                    <div>
+                        <label for="patient-name">Full Name (as per Photo ID): *</label><br>
+                        <input type="text" id="patient-name" name="full_name" required placeholder="e.g. John Doe" size="40">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-dob">Date of Birth: *</label><br>
+                        <input type="date" id="patient-dob" name="dob" required>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-age">Age (in years): *</label><br>
+                        <input type="number" id="patient-age" name="age" min="0" max="120" required placeholder="e.g. 28">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>Gender: *</label><br>
+                        <input type="radio" id="gender-male" name="gender" value="male" required>
+                        <label for="gender-male">Male</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="gender-female" name="gender" value="female">
+                        <label for="gender-female">Female</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="gender-other" name="gender" value="other">
+                        <label for="gender-other">Other</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-blood-group">Blood Group:</label><br>
+                        <select id="patient-blood-group" name="blood_group">
+                            <option value="" selected>-- Select (Optional) --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="id-type">Photo Identification Type: *</label><br>
+                        <select id="id-type" name="id_type" required>
+                            <option value="" disabled selected>-- Select ID Type --</option>
+                            <option value="aadhaar">Aadhaar Card</option>
+                            <option value="passport">Passport</option>
+                            <option value="driving_license">Driving License</option>
+                            <option value="voter_id">Voter ID Card</option>
+                            <option value="pan_card">PAN Card</option>
+                            <option value="birth_certificate">Birth Certificate (for Minors / Infants)</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="id-number">Photo ID / Document Number: *</label><br>
+                        <input type="text" id="id-number" name="id_number" required placeholder="Enter Document ID Number" size="30">
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <!-- 2. CONTACT & ADDRESS DETAILS -->
+                <fieldset>
+                    <legend><strong>2. Contact &amp; Residential Details</strong></legend>
+
+                    <div>
+                        <label for="patient-phone">Primary Mobile Phone Number: *</label><br>
+                        <input type="tel" id="patient-phone" name="phone" required placeholder="+91 9876543210" size="25">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-email">Email Address: *</label><br>
+                        <input type="email" id="patient-email" name="email" required placeholder="patient@example.com" size="35">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="emergency-contact-name">Emergency Contact Person: *</label><br>
+                        <input type="text" id="emergency-contact-name" name="emergency_contact_name" required placeholder="e.g. Guardian / Spouse / Relative" size="30">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="emergency-contact-phone">Emergency Contact Phone: *</label><br>
+                        <input type="tel" id="emergency-contact-phone" name="emergency_contact_phone" required placeholder="+91 9876543210" size="25">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-address">Residential Address: *</label><br>
+                        <textarea id="patient-address" name="address" rows="3" cols="45" required placeholder="Street address, apartment/house no., locality..."></textarea>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-city">City: *</label><br>
+                        <input type="text" id="patient-city" name="city" required placeholder="e.g. Mumbai / Delhi" size="25">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="patient-pincode">Postal / PIN Code: *</label><br>
+                        <input type="text" id="patient-pincode" name="pincode" required placeholder="e.g. 400001" size="10">
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <!-- 3. PRE-VACCINATION CLINICAL SCREENING -->
+                <fieldset>
+                    <legend><strong>3. Pre-Vaccination Clinical Screening</strong></legend>
+
+                    <div>
+                        <label>Do you have any known severe allergies to vaccines, drugs, eggs, gelatin, or latex? *</label><br>
+                        <input type="radio" id="allergy-yes" name="has_allergy" value="yes" required>
+                        <label for="allergy-yes">Yes</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="allergy-no" name="has_allergy" value="no">
+                        <label for="allergy-no">No</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="allergy-details">If yes, please specify your allergies:</label><br>
+                        <input type="text" id="allergy-details" name="allergy_details" placeholder="e.g. Penicillin, Eggs, Latex" size="40">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>Do you currently have a fever, cough, flu, or acute illness today? *</label><br>
+                        <input type="radio" id="illness-yes" name="current_illness" value="yes" required>
+                        <label for="illness-yes">Yes</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="illness-no" name="current_illness" value="no">
+                        <label for="illness-no">No</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>Do you have a bleeding disorder or take blood thinner medications? *</label><br>
+                        <input type="radio" id="bleeding-yes" name="bleeding_disorder" value="yes" required>
+                        <label for="bleeding-yes">Yes</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="bleeding-no" name="bleeding_disorder" value="no">
+                        <label for="bleeding-no">No</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>Are you currently receiving immunosuppressive therapy or chemotherapy? *</label><br>
+                        <input type="radio" id="immuno-yes" name="immunosuppressed" value="yes" required>
+                        <label for="immuno-yes">Yes</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="immuno-no" name="immunosuppressed" value="no">
+                        <label for="immuno-no">No</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>For female beneficiaries: Are you currently pregnant or breastfeeding?</label><br>
+                        <input type="radio" id="pregnant-yes" name="pregnancy_status" value="yes">
+                        <label for="pregnant-yes">Yes</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="pregnant-no" name="pregnancy_status" value="no">
+                        <label for="pregnant-no">No</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="pregnant-na" name="pregnancy_status" value="na" checked>
+                        <label for="pregnant-na">Not Applicable</label>
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <!-- 4. VACCINE SELECTION & DOSE DETAILS -->
+                <fieldset>
+                    <legend><strong>4. Vaccine Selection &amp; Dose Details</strong></legend>
+
+                    <div>
+                        <label for="vaccine-choice">Select Vaccine Required: *</label><br>
+                        <select id="vaccine-choice" name="vaccine_choice" required>
+                            <option value="" disabled selected>-- Select a Vaccine --</option>
+                            <optgroup label="Routine &amp; Pediatric Vaccines">
+                                <option value="bcg">BCG (Tuberculosis)</option>
+                                <option value="opv_ipv">Polio (OPV / IPV)</option>
+                                <option value="hepb_child">Hepatitis B (Pediatric)</option>
+                                <option value="dtap">DTaP (Diphtheria, Tetanus, Pertussis)</option>
+                                <option value="mmr">MMR (Measles, Mumps, Rubella)</option>
+                                <option value="rotavirus">Rotavirus</option>
+                                <option value="hib">Haemophilus Influenzae Type B (Hib)</option>
+                            </optgroup>
+                            <optgroup label="Viral Disease Vaccines">
+                                <option value="covid19">COVID-19 (mRNA / Protein Subunit)</option>
+                                <option value="influenza">Influenza (Annual Quadrivalent Flu)</option>
+                                <option value="varicella">Varicella (Chickenpox)</option>
+                                <option value="hepa_adult">Hepatitis A</option>
+                                <option value="hpv">HPV (Human Papillomavirus - Gardasil 9)</option>
+                                <option value="rabies">Rabies (Post/Pre-Exposure Prophylaxis)</option>
+                                <option value="shingles">Zoster / Shingles (50+ years)</option>
+                                <option value="japanese_encephalitis">Japanese Encephalitis</option>
+                            </optgroup>
+                            <optgroup label="Bacterial Disease Vaccines">
+                                <option value="pneumococcal_pcv">Pneumococcal Conjugate (PCV13 / PPSV23)</option>
+                                <option value="typhoid_tcv">Typhoid Conjugate (TCV)</option>
+                                <option value="meningococcal">Meningococcal ACWY</option>
+                                <option value="tetanus_toxoid">Tetanus Toxoid (TT / Td)</option>
+                                <option value="cholera">Oral Cholera Vaccine</option>
+                            </optgroup>
+                            <optgroup label="Combination Vaccines">
+                                <option value="pentavalent">Pentavalent (DTP + HepB + Hib)</option>
+                                <option value="hexavalent">Hexavalent (DTP + HepB + Hib + IPV)</option>
+                                <option value="mmrv">MMRV (MMR + Varicella)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="dose-type">Dose Number: *</label><br>
+                        <select id="dose-type" name="dose_type" required>
+                            <option value="" disabled selected>-- Select Dose --</option>
+                            <option value="dose_1">1st Dose (Initial Dose)</option>
+                            <option value="dose_2">2nd Dose</option>
+                            <option value="dose_3">3rd Dose</option>
+                            <option value="booster">Booster / Precautionary Dose</option>
+                            <option value="annual">Annual / Periodic Shot</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="previous-dose-date">Date of Previous Dose (if applicable):</label><br>
+                        <input type="date" id="previous-dose-date" name="previous_dose_date">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="previous-cert-id">Previous Dose Certificate / Reference ID (if applicable):</label><br>
+                        <input type="text" id="previous-cert-id" name="previous_cert_id" placeholder="e.g. COV-12345678" size="30">
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <!-- 5. APPOINTMENT TIME & CENTER SELECTION -->
+                <fieldset>
+                    <legend><strong>5. Appointment Slot &amp; Hospital Center</strong></legend>
+
+                    <div>
+                        <label for="vaccine-center">Select Vaccination Center: *</label><br>
+                        <select id="vaccine-center" name="vaccine_center" required>
+                            <option value="" disabled selected>-- Select Hospital Hub --</option>
+                            <option value="central">MediNexus Central Hospital (Main Campus &amp; Cold Chain Hub)</option>
+                            <option value="north">MediNexus North Trauma &amp; Pediatric Wing</option>
+                            <option value="east">MediNexus East Community Immunization Center</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="appointment-date">Preferred Appointment Date: *</label><br>
+                        <input type="date" id="appointment-date" name="appointment_date" required>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="time-slot">Preferred Time Slot: *</label><br>
+                        <select id="time-slot" name="time_slot" required>
+                            <option value="" disabled selected>-- Select Time Window --</option>
+                            <option value="slot_morning">Morning: 09:00 AM &ndash; 12:00 PM</option>
+                            <option value="slot_afternoon">Afternoon: 12:00 PM &ndash; 03:00 PM</option>
+                            <option value="slot_evening">Evening: 03:00 PM &ndash; 06:00 PM</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="special-requests">Special Medical Assistance / Mobility Needs (Optional):</label><br>
+                        <textarea id="special-requests" name="special_requests" rows="2" cols="45" placeholder="e.g. Wheelchair assistance, pediatric distraction support, interpreter..."></textarea>
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <!-- 6. CONSENT & DECLARATION -->
+                <fieldset>
+                    <legend><strong>6. Consent &amp; Medical Declaration</strong></legend>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" id="declaration-agree" name="declaration_agree" required>
+                            <strong>Medical Declaration:</strong> I declare that all personal and health screening details provided above are true, complete, and accurate to the best of my knowledge. *
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" id="consent-agree" name="consent_agree" required>
+                            <strong>Administration Consent:</strong> I voluntarily consent to the administration of the selected vaccine and agree to remain in the clinic observation lounge for at least 15 to 30 minutes post-injection for adverse reaction monitoring. *
+                        </label>
+                    </div>
+                </fieldset>
+
+                <br>
+
+                <!-- 7. SUBMIT BUTTON -->
+                <div>
+                    <button type="submit">Submit Vaccine Registration</button>
+                    &nbsp;&nbsp;
+                    <button type="reset">Reset Form</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>24/7 MediNexus Cold-Chain Immunization Helpline: +91 8619216569</p>
+        <p>Vaccination protocols comply with WHO and National Immunization Guidelines.</p>
+        <p>&copy; 2026 MediNexus Hospital &amp; LifeCare Network. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

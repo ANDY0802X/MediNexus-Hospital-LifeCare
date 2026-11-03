@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation - MediNexus LifeCare</title>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div>
+            <div>
+                <span>MediNexus LifeCare &bull; Blood Donation</span>
+                <span>Save Lives, Share Hope</span>
+            </div>
+            <nav>
+                <a href="../index.html">Return to Home</a> |
+                <a href="blood_bank.html">Blood Bank Portal</a> |
+                <a href="blood_request.html">Need Blood? (Request Form)</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section>
+            <div>
+                <p>1 Donation Can Save Up to 3 Lives</p>
+                <h1>Every Drop Counts. Donate Blood Today.</h1>
+                <p>
+                    Please review the safety guidelines below before submitting your donation details through the MediNexus Blood Bank.
+                </p>
+            </div>
+        </section>
+
+        <!-- Precautions in a single div without specific heading (one per line) -->
+        <div>
+            <p>1. Drink plenty of water (at least 500ml) and avoid caffeine or alcohol 24 hours prior to donation.</p>
+            <p>2. Eat a healthy, iron-rich meal beforehand and avoid high-fat food items.</p>
+            <p>3. Get a full 7 to 8 hours of restful sleep the night before your donation.</p>
+            <p>4. Donors must be 18 to 65 years old and weigh at least 50 kg (110 lbs).</p>
+            <p>5. Maintain at least 56 days (8 weeks) between successive whole blood donations.</p>
+            <p>6. Must be free of cold/flu, active antibiotics, or tattoos/piercings within the last 6 months.</p>
+        </div>
+
+        <!-- Donor Registration Form Section -->
+        <section id="form-section">
+            <div>
+                <h2>Donor Registration</h2>
+                <p>Fill out the form below to register as a voluntary blood donor.</p>
+
+                <form action="#" method="POST">
+                    <!-- Blood Group Selection -->
+                    <div>
+                        <label for="donor-blood-type">Select Your Blood Group: *</label>
+                        <select id="donor-blood-type" name="blood_group" required>
+                            <option value="" disabled selected>-- Select Blood Group --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <!-- Personal Details -->
+                    <div>
+                        <label for="donor-name">Full Name: *</label>
+                        <input type="text" id="donor-name" name="full_name" required placeholder="John Doe">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="donor-email">Email Address: *</label>
+                        <input type="email" id="donor-email" name="email" required placeholder="name@example.com">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="donor-phone">Phone Number: *</label>
+                        <input type="tel" id="donor-phone" name="phone" required placeholder="+91 9876543210">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="donor-age">Age (18-65): *</label>
+                        <input type="number" id="donor-age" name="age" min="18" max="65" required placeholder="25">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="donor-date">Preferred Donation Date: *</label>
+                        <input type="date" id="donor-date" name="preferred_date" required>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="donor-center">Donation Center: *</label>
+                        <select id="donor-center" name="center" required>
+                            <option value="" disabled selected>-- Select Hospital Hub --</option>
+                            <option value="medinexus-central">MediNexus Central Blood Bank (Main Campus)</option>
+                            <option value="medinexus-north">MediNexus North Trauma &amp; Surgical Center</option>
+                            <option value="medinexus-east">MediNexus East Community Health Hub</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" id="donor-consent" name="consent" required>
+                            I confirm that I meet the safety requirements and consent to pre-donation health screening.
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <button type="submit">Submit Donation Registration</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page Footer -->
+    <footer>
+        <p>24/7 MediNexus Emergency Blood Bank: +91 8619216569</p>
+        <p>&copy; 2026 MediNexus Hospital &amp; LifeCare Network. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

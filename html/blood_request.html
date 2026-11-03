@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request - MediNexus LifeCare</title>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div>
+            <div>
+                <span>MediNexus LifeCare &bull; Blood Request Portal</span>
+                <span>Urgent Blood Dispatch &amp; Support</span>
+            </div>
+            <nav>
+                <a href="../index.html">Return to Home</a> |
+                <a href="blood_bank.html">Blood Bank Portal</a> |
+                <a href="blood_donation.html">Want to Donate Blood? (Donor Form)</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section>
+            <div>
+                <p>24/7 Rapid Response Blood Dispatch</p>
+                <h1>Request Blood Units</h1>
+                <p>
+                    Submit patient and hospital details below to request urgent blood units from the nearest MediNexus
+                    Blood Bank reserve.
+                </p>
+            </div>
+        </section>
+
+        <!-- Important Notice Section -->
+        <section>
+            <div>
+                <h2>Important Requisition Guidelines</h2>
+                <ul>
+                    <li><strong>Emergency Requests:</strong> For life-threatening emergencies requiring blood within 2
+                        hours, please call our 24/7 dispatch hotline directly at <strong>+91 8619216569</strong> in
+                        addition to submitting this form.</li>
+                    <li><strong>Physician Authorization:</strong> Blood requisitions must be recommended by the
+                        attending physician or hospital administration.</li>
+                    <li><strong>Cross-Matching:</strong> Standard blood sample cross-matching is conducted prior to
+                        blood bag release.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Blood Request Form Section -->
+        <section id="form-section">
+            <div>
+                <h2>Urgent Blood Request Form</h2>
+                <p>Please provide complete and accurate details for expedited processing.</p>
+
+                <form action="#" method="POST">
+                    <!-- Blood Group Selection -->
+                    <div>
+                        <label for="request-blood-type">Required Blood Group: *</label>
+                        <select id="request-blood-type" name="blood_group" required>
+                            <option value="" disabled selected>-- Select Blood Group --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <!-- Patient and Hospital Details -->
+                    <div>
+                        <label for="patient-name">Patient Full Name: *</label>
+                        <input type="text" id="patient-name" name="patient_name" required placeholder="Patient Name">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="hospital-name">Hospital Name &amp; Room / Ward: *</label>
+                        <input type="text" id="hospital-name" name="hospital_name" required
+                            placeholder="City Hospital, ICU Ward 3">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="units-needed">Units (Pints) Required: *</label>
+                        <input type="number" id="units-needed" name="units_needed" min="1" max="10" required
+                            placeholder="2">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="urgency-level">Urgency Level: *</label>
+                        <select id="urgency-level" name="urgency" required>
+                            <option value="" disabled selected>-- Select Urgency --</option>
+                            <option value="immediate">Immediate / Emergency (Within 2 Hours)</option>
+                            <option value="critical">Critical (Within 24 Hours)</option>
+                            <option value="routine">Routine / Planned Surgery</option>
+                        </select>
+                    </div>
+
+                    <br>
+
+                    <!-- Attendant Details -->
+                    <div>
+                        <label for="contact-name">Attendant / Contact Person Name: *</label>
+                        <input type="text" id="contact-name" name="contact_name" required placeholder="Attendant Name">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="contact-phone">Emergency Contact Phone Number: *</label>
+                        <input type="tel" id="contact-phone" name="contact_phone" required placeholder="+91 8619216569">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="request-notes">Clinical Notes / Diagnosis (Optional):</label><br>
+                        <textarea id="request-notes" name="notes" rows="4" cols="40"
+                            placeholder="Specify diagnosis, doctor's advice, or delivery instructions..."></textarea>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" id="request-verify" name="verification" required>
+                            I verify that this blood request is medically authorized by an attending physician.
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <button type="submit">Submit Blood Request</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page Footer -->
+    <footer>
+        <p>24/7 MediNexus Emergency Blood Bank Hotline: +91 8619216569</p>
+        <p>&copy; 2026 MediNexus Hospital &amp; LifeCare Network. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
